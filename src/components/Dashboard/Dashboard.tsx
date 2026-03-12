@@ -41,19 +41,6 @@ interface ChartPoint {
   value: number;
 }
 
-interface PredictedMover {
-  symbol: string;
-  reason: string;
-  sentiment: 'bullish' | 'bearish' | 'neutral';
-  confidence: number;
-  entry_price: number;
-  target_price: number;
-  stop_loss: number;
-  risk_reward: string;
-  risk_percentage: number;
-  entry_time: string;
-}
-
 interface VolumeSpike {
   symbol: string;
   today_vol: number;
@@ -65,11 +52,11 @@ interface VolumeSpike {
 }
 
 const InfoTooltip = ({ text }: { text: string }) => (
-  <div className="relative group ml-2 inline-flex items-center">
-    <Info className="w-3.5 h-3.5 text-content-muted hover:text-white transition-colors cursor-help" />
-    <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-64 p-3 bg-[#15181E] border border-border/50 rounded-xl text-xs text-content-secondary leading-relaxed opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-2xl z-[1000] pointer-events-none font-medium">
+  <div className="relative group ml-1.5 inline-flex items-center">
+    <Info className="w-3 h-3 text-content-muted hover:text-white transition-colors cursor-help" />
+    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 p-3 bg-[#111318] border border-white/10 rounded-xl text-[10px] text-content-secondary leading-relaxed opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[99999] pointer-events-none font-medium backdrop-blur-2xl">
       {text}
-      <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-border/50"></div>
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-full w-0 h-0 border-l-[6px] border-r-[6px] border-b-[6px] border-l-transparent border-r-transparent border-b-white/10"></div>
     </div>
   </div>
 );
@@ -82,10 +69,11 @@ export default function Dashboard() {
   const [kse100Chart, setKse100Chart] = useState<ChartPoint[]>([]);
   const [kse30Chart, setKse30Chart] = useState<ChartPoint[]>([]);
   const [allStocks, setAllStocks] = useState<Stock[]>([]);
-  const [expectedGainers, setExpectedGainers] = useState<PredictedMover[]>([]);
-  const [expectedLosers, setExpectedLosers] = useState<PredictedMover[]>([]);
   const [volumeSpikes, setVolumeSpikes] = useState<VolumeSpike[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [predictionTimeframe, setPredictionTimeframe] = useState<"day" | "week" | "month">("day");
+  const [predictions, setPredictions] = useState<any[]>([]);
+  const [predictionUpdated, setPredictionUpdated] = useState<string>("");
 
   const MarketStatusBanner = () => {
     const phase = marketData?.phase || "CLOSED";
@@ -168,19 +156,35 @@ export default function Dashboard() {
       if (doc.exists()) setAllStocks(doc.data()?.stocks || []);
     });
 
-    // Market Opening Predictions
-    const unsubPredictions = onSnapshot(doc(db, "expected_movers", "latest"), (doc) => {
-      if (doc.exists()) {
-        const data = doc.data();
-        setExpectedGainers(data?.expected_gainers || []);
-        setExpectedLosers(data?.expected_losers || []);
-      }
-    });
-
     // Volume Spike Screener
     const unsubSpikes = onSnapshot(doc(db, "volume_spikes", "latest"), (doc) => {
       if (doc.exists()) {
         setVolumeSpikes(doc.data()?.spikes || []);
+      }
+    });
+
+    // AI Prediction Engine (Day/Week/Month)
+    const unsubDayPred = onSnapshot(doc(db, "predictions", "latest_day"), (doc) => {
+      if (predictionTimeframe === "day" && doc.exists()) {
+        const data = doc.data();
+        setPredictions(data.data || []);
+        setPredictionUpdated(data.updated_at);
+      }
+    });
+
+    const unsubWeekPred = onSnapshot(doc(db, "predictions", "latest_week"), (doc) => {
+      if (predictionTimeframe === "week" && doc.exists()) {
+        const data = doc.data();
+        setPredictions(data.data || []);
+        setPredictionUpdated(data.updated_at);
+      }
+    });
+
+    const unsubMonthPred = onSnapshot(doc(db, "predictions", "latest_month"), (doc) => {
+      if (predictionTimeframe === "month" && doc.exists()) {
+        const data = doc.data();
+        setPredictions(data.data || []);
+        setPredictionUpdated(data.updated_at);
       }
     });
 
@@ -191,10 +195,12 @@ export default function Dashboard() {
       unsub100Chart();
       unsub30Chart();
       unsubAllStocks();
-      unsubPredictions();
       unsubSpikes();
+      unsubDayPred();
+      unsubWeekPred();
+      unsubMonthPred();
     };
-  }, []);
+  }, [predictionTimeframe]);
 
   const filteredStocks = useMemo(() => {
     if (!searchQuery) return allStocks;
@@ -411,99 +417,150 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Market Opening Predictions - NEW FEATURE */}
-      <div className="bg-background-accent/30 border border-bullish/20 rounded-xl p-6 backdrop-blur-md shadow-2xl relative">
-        <div className="absolute top-0 right-0 p-3">
-          <div className="px-2 py-0.5 rounded text-[8px] font-black tracking-tighter bg-bullish text-black uppercase">
-            AI PREDICTIONS
-          </div>
-        </div>
-        
-        <h3 className="text-sm font-black tracking-[0.2em] text-white uppercase mb-6 flex items-center">
-          <Activity className="w-5 h-5 mr-3 text-bullish animate-pulse" />
-          Market Opening Predictions
-          <InfoTooltip text="AI-powered intraday trade setups generated by analyzing pre-market financial results, corporate announcements, and regulatory filings." />
-          <span className="ml-3 text-[10px] text-content-muted font-normal tracking-normal capitalize">(Based on Latest Corporate Announcements)</span>
-        </h3>
-
-        <div className="grid grid-cols-2 gap-8">
-          <div className="space-y-4">
-            <h4 className="text-[10px] font-black text-bullish tracking-widest uppercase flex items-center border-b border-bullish/10 pb-2">
-              <TrendingUp className="w-4 h-4 mr-2" />
-              Expected Gainers
-            </h4>
-            <div className="grid gap-3">
-              {expectedGainers.length > 0 ? expectedGainers.map((pred, idx) => (
-                <div key={idx} className="bg-white/5 border border-white/5 rounded-lg p-3 hover:bg-bullish/5 transition-all group">
-                  <div className="flex justify-between items-start mb-1">
-                    <span className="text-lg font-black text-white group-hover:text-bullish">{pred.symbol}</span>
-                    <span className="text-[10px] font-bold text-bullish bg-bullish/10 px-2 py-0.5 rounded italic">POSITIVE SENTIMENT</span>
-                  </div>
-                  <p className="text-[11px] text-content-secondary leading-tight line-clamp-2 italic opacity-80 group-hover:opacity-100 mb-3">
-                    "{pred.reason}"
-                  </p>
-                  <div className="grid grid-cols-2 gap-2 mt-2 border-t border-white/5 pt-2">
-                    <div className="flex flex-col">
-                      <span className="text-[9px] text-content-muted font-bold uppercase">Entry ({pred.entry_time})</span>
-                      <span className="text-xs font-mono font-bold text-white">Rs. {pred.entry_price?.toLocaleString() || "---"}</span>
-                    </div>
-                    <div className="flex flex-col text-right">
-                      <span className="text-[9px] text-content-muted font-bold uppercase">Target (EP +5%)</span>
-                      <span className="text-xs font-mono font-bold text-bullish">Rs. {pred.target_price?.toLocaleString() || "---"}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] text-content-muted font-bold uppercase">Stop Loss (-2%)</span>
-                      <span className="text-xs font-mono font-bold text-bearish">Rs. {pred.stop_loss?.toLocaleString() || "---"}</span>
-                    </div>
-                    <div className="flex flex-col text-right">
-                      <span className="text-[9px] text-content-muted font-bold uppercase">Risk ({pred.risk_percentage}%)</span>
-                      <span className="text-xs font-mono font-bold text-white">{pred.risk_reward} R/R</span>
-                    </div>
-                  </div>
-                </div>
-              )) : (
-                <div className="text-content-muted text-xs italic py-4 border border-dashed border-white/5 rounded-lg text-center">No significant bullish announcements found...</div>
-              )}
+      {/* Multi-Timeframe Signal Scoring Engine */}
+      <div className="bg-background-accent/30 border border-border rounded-xl p-0 backdrop-blur-md shadow-2xl relative">
+        <div className="px-6 py-5 border-b border-border bg-white/[0.02] flex justify-between items-center">
+          <div className="flex items-center space-x-4">
+            <h3 className="text-sm font-black tracking-[0.2em] text-white uppercase flex items-center">
+              <Activity className="w-5 h-5 mr-3 text-bullish animate-pulse" />
+              Signal Scoring Engine
+              <InfoTooltip text="Automated scoring system weights stocks across 15+ technical and fundamental signals (RSI, Vol Accumulation, MA Crosses, and PSX Announcements) to predict probability of move." />
+            </h3>
+            
+            <div className="flex bg-white/5 p-1 rounded-lg border border-white/5 ml-4">
+              {(["day", "week", "month"] as const).map((tf) => (
+                <button
+                  key={tf}
+                  onClick={() => setPredictionTimeframe(tf)}
+                  className={`px-4 py-1.5 rounded-md text-[10px] font-black uppercase tracking-widest transition-all ${
+                    predictionTimeframe === tf 
+                      ? "bg-bullish text-black shadow-lg" 
+                      : "text-content-muted hover:text-white"
+                  }`}
+                >
+                  {tf}
+                </button>
+              ))}
             </div>
           </div>
+          
+          <div className="flex items-center space-x-2">
+            <span className="text-[10px] text-content-muted font-bold uppercase tracking-tighter">Updated:</span>
+            <span className="text-[11px] font-mono text-white font-bold">
+              {predictionUpdated ? new Date(predictionUpdated).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "--:--"} PKT
+            </span>
+          </div>
+        </div>
 
-          <div className="space-y-4">
-            <h4 className="text-[10px] font-black text-bearish tracking-widest uppercase flex items-center border-b border-bearish/10 pb-2">
-              <TrendingDown className="w-4 h-4 mr-2" />
-              Expected Losers
-            </h4>
-            <div className="grid gap-3">
-              {expectedLosers.length > 0 ? expectedLosers.map((pred, idx) => (
-                <div key={idx} className="bg-white/5 border border-white/5 rounded-lg p-3 hover:bg-bearish/5 transition-all group">
-                  <div className="flex justify-between items-start mb-1">
-                    <span className="text-lg font-black text-white group-hover:text-bearish">{pred.symbol}</span>
-                    <span className="text-[10px] font-bold text-bearish bg-bearish/10 px-2 py-0.5 rounded italic">NEGATIVE SENTIMENT</span>
-                  </div>
-                  <p className="text-[11px] text-content-secondary leading-tight line-clamp-2 italic opacity-80 group-hover:opacity-100 mb-3">
-                    "{pred.reason}"
-                  </p>
-                  <div className="grid grid-cols-2 gap-2 mt-2 border-t border-white/5 pt-2">
-                    <div className="flex flex-col">
-                      <span className="text-[9px] text-content-muted font-bold uppercase">Entry ({pred.entry_time})</span>
-                      <span className="text-xs font-mono font-bold text-white">Rs. {pred.entry_price?.toLocaleString() || "---"}</span>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="text-[10px] text-content-secondary bg-white/[0.03] uppercase tracking-tighter border-b border-border/50">
+                <th className="py-4 px-6 font-black">Symbol</th>
+                <th className="py-4 px-6 font-black text-center">
+                  Score
+                  <InfoTooltip text="Aggregate points (0-100) based on technical setup + fundamental catalysts. >60 is considered high probability." />
+                </th>
+                <th className="py-4 px-6 font-black text-center">
+                  Bias
+                  <InfoTooltip text="The overall market sentiment for this stock based on its score: Strong Bullish, Bullish, Watch, Neutral, etc." />
+                </th>
+                <th className="py-4 px-6 font-black">
+                  Active Signals Fired
+                  <InfoTooltip text="The underlying logic that triggered this score (e.g., RSI zone, Volume Accumulation, Sector rotation)." />
+                </th>
+                <th className="py-4 px-6 font-black text-right">
+                  Run Price
+                  <InfoTooltip text="The nominal market price of the stock at the moment the AI scoring engine was executed (9:00 AM PKT)." />
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border/10">
+              {predictions.length > 0 ? predictions.map((pred, idx) => (
+                <tr key={idx} className="hover:bg-white/[0.02] transition-colors group">
+                  <td className="py-4 px-6">
+                    <span className="text-sm font-black text-white group-hover:text-bullish transition-colors">
+                      {pred.symbol}
+                    </span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="w-16 h-1 w-full bg-white/5 rounded-full overflow-hidden mb-1">
+                        <div 
+                          className={`h-full transition-all duration-1000 ${
+                            pred.score >= 75 ? 'bg-bullish shadow-[0_0_8px_rgba(34,197,94,0.5)]' :
+                            pred.score >= 50 ? 'bg-bullish/60' : 'bg-content-muted'
+                          }`}
+                          style={{ width: `${pred.score}%` }}
+                        />
+                      </div>
+                      <span className="text-xs font-black font-mono text-white">{pred.score}</span>
                     </div>
-                    <div className="flex flex-col text-right">
-                      <span className="text-[9px] text-content-muted font-bold uppercase">Target (EP -5%)</span>
-                      <span className="text-xs font-mono font-bold text-bearish">Rs. {pred.target_price?.toLocaleString() || "---"}</span>
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className={`w-2 h-2 rounded-full animate-pulse ${
+                        pred.bias?.includes('BULLISH') ? 'bg-bullish' :
+                        pred.bias?.includes('WATCH') ? 'bg-yellow-400' : 'bg-content-muted'
+                      }`} />
+                      <span className={`text-[10px] font-black tracking-widest uppercase ${
+                        pred.bias?.includes('BULLISH') ? 'text-bullish' :
+                        pred.bias?.includes('WATCH') ? 'text-yellow-400' : 'text-content-muted'
+                      }`}>
+                        {pred.bias?.replace('_', ' ')}
+                      </span>
                     </div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] text-content-muted font-bold uppercase">Stop Loss (+2%)</span>
-                      <span className="text-xs font-mono font-bold text-bullish">Rs. {pred.stop_loss?.toLocaleString() || "---"}</span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <div className="flex flex-wrap gap-1.5">
+                      {pred.signals_fired?.map((sig: string, sIdx: number) => (
+                        <span key={sIdx} className="px-2 py-0.5 rounded-md bg-white/5 border border-white/5 text-[9px] font-bold text-content-secondary group-hover:text-white transition-colors">
+                          {sig}
+                        </span>
+                      ))}
                     </div>
-                    <div className="flex flex-col text-right">
-                      <span className="text-[9px] text-content-muted font-bold uppercase">Risk ({pred.risk_percentage}%)</span>
-                      <span className="text-xs font-mono font-bold text-white">{pred.risk_reward} R/R</span>
-                    </div>
-                  </div>
-                </div>
+                  </td>
+                  <td className="py-4 px-6 text-right">
+                    <span className="text-xs font-mono font-bold text-white italic">Rs. {pred.price_at_run?.toLocaleString()}</span>
+                  </td>
+                </tr>
               )) : (
-                <div className="text-content-muted text-xs italic py-4 border border-dashed border-white/5 rounded-lg text-center">No significant bearish announcements found...</div>
+                <tr>
+                  <td colSpan={5} className="py-20 text-center">
+                    <div className="flex flex-col items-center space-y-3 opacity-30">
+                      <Lock className="w-8 h-8 text-content-muted" />
+                      <span className="text-xs font-black tracking-widest uppercase">Syncing Cloud Intelligence...</span>
+                      <span className="text-[10px] font-bold text-content-muted italic">Scoring engine runs daily at 9:00 AM PKT</span>
+                    </div>
+                  </td>
+                </tr>
               )}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Engine Methodology & Legend */}
+        <div className="px-6 py-5 bg-white/[0.03] border-t border-border/50">
+          <div className="grid grid-cols-3 gap-8">
+            <div className="space-y-2">
+              <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Aggregate scoring (0-100)</h4>
+              <p className="text-[9px] text-content-muted leading-relaxed">
+                Our AI weights 15+ indicators. <span className="text-bullish font-bold">Technicals</span> (RSI Trend, MA Crosses, Vol Accumulation) provide 60% of the weight, while <span className="text-bullish font-bold">Catalysts</span> (PSX Announcements, Sector Rotation) provide the remaining 40%.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Bias Thresholds</h4>
+              <div className="flex flex-wrap gap-2 pt-1">
+                <span className="text-[8px] font-black px-1.5 py-0.5 rounded bg-bullish text-black">75+ STRONG BULLISH</span>
+                <span className="text-[8px] font-black px-1.5 py-0.5 rounded bg-bullish/40 text-white">60+ BULLISH</span>
+                <span className="text-[8px] font-black px-1.5 py-0.5 rounded bg-white/10 text-white">45+ WATCH</span>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Price Re-anchoring</h4>
+              <p className="text-[9px] text-content-muted leading-relaxed">
+                <span className="text-white font-bold italic">Run Price</span> is the actual nominal price from PSX. We automatically re-anchor historical 6-month adjusted data to this nominal price to ensure MA20/MA50 and RSI calculations are mathematically precise.
+              </p>
             </div>
           </div>
         </div>

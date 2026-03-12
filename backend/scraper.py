@@ -8,28 +8,8 @@ from bs4 import BeautifulSoup
 from apscheduler.schedulers.background import BackgroundScheduler
 import firebase_admin
 from firebase_admin import credentials, firestore
-from datetime import datetime
-import pytz
-
-PKT = pytz.timezone('Asia/Karachi')
-MARKET_OPEN_H = 9.5   # 9:30 AM
-MARKET_CLOSE_H = 15.5 # 3:30 PM
-
-# --- 1. FIREBASE SETUP ---
-# Path to your Firebase Admin SDK service account key JSON file.
-_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-FIREBASE_KEY_PATH = os.getenv("FIREBASE_KEY_PATH", os.path.join(_BASE_DIR, "serviceAccountKey.json"))
-
-# Initialize Firebase only if the key exists
-try:
-    cred = credentials.Certificate(FIREBASE_KEY_PATH)
-    firebase_admin.initialize_app(cred)
-    db = firestore.client()
-    print("Firebase initialized successfully.")
-except Exception as e:
-    print(f"WARNING: Firebase initialization failed. Error: {e}")
-    print("Please ensure you have placed 'serviceAccountKey.json' in the backend folder.")
-    db = None
+from shared import db, PKT, MARKET_OPEN_H, MARKET_CLOSE_H, _BASE_DIR
+from prediction_engine import run_prediction_engine
 
 
 # --- 2. SCRAPING FUNCTIONS ---
@@ -580,19 +560,44 @@ def get_market_movers():
 
 
 def get_market_sectors():
-    """Fetch sector performance (Mocked for MVP as Investing.com is heavily protected)"""
-    return {
-        "sectors": [
-            {"name": "Commercial Banks", "change": 3.2},
-            {"name": "Fertilizer", "change": 2.1},
-            {"name": "Cement", "change": 1.7},
-            {"name": "Technology", "change": 1.4},
-            {"name": "Oil & Gas Exp", "change": -0.4},
-            {"name": "Power Generation", "change": -1.2},
-            {"name": "Textile Composite", "change": -0.8},
-            {"name": "Refinery", "change": -1.5},
-        ]
-    }
+    """Calculates sector performance by averaging changes of its KSE-100 components."""
+    try:
+        kse100_path = os.path.join(os.path.dirname(__file__), "kse100.json")
+        if not os.path.exists(kse100_path):
+            return {"sectors": []}
+            
+        with open(kse100_path, 'r') as f:
+            tickers = json.load(f)
+            
+        sector_map = {}
+        # Sample first 30 for speed in the live scraper to keep loop tight
+        for symbol in tickers[:30]:
+            try:
+                ticker = yf.Ticker(f"{symbol}.KA")
+                hist = ticker.history(period="2d", interval="1d", auto_adjust=False)
+                if len(hist) < 2: continue
+                
+                info = ticker.info
+                sector = info.get('sector', 'Unknown')
+                
+                prev = hist['Close'].iloc[-2]
+                curr = hist['Close'].iloc[-1]
+                if prev > 0:
+                    change = ((curr - prev) / prev) * 100
+                    if sector not in sector_map: sector_map[sector] = []
+                    sector_map[sector].append(change)
+            except: continue
+            
+        final_sectors = []
+        for name, changes in sector_map.items():
+            final_sectors.append({
+                "name": name,
+                "change": round(sum(changes)/len(changes), 2)
+            })
+        return {"sectors": sorted(final_sectors, key=lambda x: x['change'], reverse=True)}
+    except Exception as e:
+        print(f"ERROR calculating sectors: {e}")
+        return {"sectors": []}
 
 
 # --- 3. FIREBASE WRITERS ---
@@ -741,6 +746,47 @@ if __name__ == "__main__":
         day_of_week="mon-fri",
         hour=16, minute=0,
         id="cleanup"
+    )
+
+    # --- 4. PREDICTION ENGINE JOBS ---
+    
+    def job_day_predictions():
+        print("Running DAILY prediction engine...")
+        run_prediction_engine("day")
+
+    def job_week_predictions():
+        print("Running WEEKLY prediction engine...")
+        run_prediction_engine("week")
+
+    def job_month_predictions():
+        print("Running MONTHLY prediction engine...")
+        run_prediction_engine("month")
+
+    # Day: Mon-Fri 9:00 AM
+    scheduler.add_job(
+        job_day_predictions,
+        trigger="cron",
+        day_of_week="mon-fri",
+        hour=9, minute=0,
+        id="pred_day"
+    )
+
+    # Week: Monday 9:00 AM
+    scheduler.add_job(
+        job_week_predictions,
+        trigger="cron",
+        day_of_week="mon",
+        hour=9, minute=1, # Slightly offset from day
+        id="pred_week"
+    )
+
+    # Month: 1st of month 9:00 AM
+    scheduler.add_job(
+        job_month_predictions,
+        trigger="cron",
+        day="1",
+        hour=9, minute=2, # Slightly offset
+        id="pred_month"
     )
 
     scheduler.start()

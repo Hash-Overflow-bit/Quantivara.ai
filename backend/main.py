@@ -31,12 +31,42 @@ def get_market_status():
         "turnover": "18.4B"
     }
 
+@app.get("/api/predictions")
+def get_predictions(timeframe: str = "day"):
+    """Fetch ranked predictions for Day, Week, or Month."""
+    try:
+        from scraper import db
+        doc = db.collection("predictions").document(f"latest_{timeframe}").get()
+        if doc.exists:
+            return doc.to_dict()
+        return {"data": [], "message": "No predictions found"}
+    except Exception as e:
+        return {"error": str(e), "data": []}
+
+@app.get("/api/predictions/{symbol}")
+def get_stock_predictions(symbol: str):
+    """Fetch all timeframe predictions for a specific stock."""
+    # This is slightly more complex if we want to search through history, 
+    # but for now we'll search the latest snapshots.
+    try:
+        from scraper import db
+        results = {}
+        for tf in ["day", "week", "month"]:
+            doc = db.collection("predictions").document(f"latest_{tf}").get()
+            if doc.exists:
+                data = doc.to_dict().get("data", [])
+                match = next((item for item in data if item["symbol"] == symbol.upper()), None)
+                if match:
+                    results[tf] = match
+        return results
+    except Exception as e:
+        return {"error": str(e)}
+
 @app.get("/api/health")
 def health():
     import os, json, pytz
     from datetime import datetime
     
-    # Fallback default values
     active_spikes = 0
     avg_count = 0
     
@@ -48,13 +78,10 @@ def health():
             spikes_doc = db.collection("volume_spikes").document("latest").get()
             if spikes_doc.exists:
                 spikes = spikes_doc.to_dict().get("spikes", [])
-                # Count spikes >= 2.0 ratio as "active" as per new threshold
                 active_spikes = len([s for s in spikes if s.get('spike_ratio', 0) >= 2.0])
                 
-        # 2. Tracked tickers (from Firestore daily_volumes)
+        # 2. Tracked tickers
         if db:
-            # Efficiently count documents in daily_volumes collection
-            # Note: collection.get() for counting is okay for small sets (<100)
             avg_count = len(list(db.collection("daily_volumes").list_documents()))
                 
     except Exception as e:
