@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0c;
+  --background-accent: #16161a;
+  --border: #242429;
+  --content-primary: #ffffff;
+  --content-secondary: #a1a1aa;
+  --content-muted: #52525b;
+  --bullish: #10b981;
+  --bullish-muted: rgba(16, 185, 129, 0.1);
+  --bearish: #ef4444;
+  --bearish-muted: rgba(239, 68, 68, 0.1);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--content-primary);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.panel {
+  background: var(--background-accent);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.data-label {
+  color: var(--content-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.data-value {
+  color: var(--content-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.text-bullish { color: var(--bullish); }
+.text-bearish { color: var(--bearish); }
+.bg-bullish-muted { background-color: var(--bullish-muted); }
+.bg-bearish-muted { background-color: var(--bearish-muted); }

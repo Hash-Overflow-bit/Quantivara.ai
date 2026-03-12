@@ -1,0 +1,87 @@
+================================================================================
+STEP 1: yFinance PSX Data Verification
+================================================================================
+  OK    OGDC.KA      => Close:     283.27  Volume:      3,783,886  Rows: 4
+  OK    LUCK.KA      => Close:     379.02  Volume:      1,669,709  Rows: 4
+  OK    HUBC.KA      => Close:     204.70  Volume:      2,687,429  Rows: 4
+  OK    HBL.KA       => Close:     283.33  Volume:      1,131,163  Rows: 4
+  OK    FFC.KA       => Close:     507.56  Volume:      1,068,523  Rows: 4
+  OK    KEL.KA       => Close:       7.49  Volume:     37,690,039  Rows: 4
+  OK    PPL.KA       => Close:     214.74  Volume:      4,188,514  Rows: 4
+  OK    EFERT.KA     => Close:     205.23  Volume:        733,410  Rows: 4
+  OK    PSO.KA       => Close:     365.38  Volume:      1,414,557  Rows: 4
+  FAIL  ENGRO.KA     => EMPTY (possibly wrong suffix)
+
+  Result: 9/10 tickers returning data
+
+================================================================================
+STEP 2: 30-Day Baseline Sanity Check
+================================================================================
+  Total tickers in baseline: 97
+  Liquid stocks (avg >= 500K):  52
+  Illiquid stocks (avg < 500K): 45
+  OK: No stocks with zero volume
+  OK: No stocks with suspiciously large volume
+
+  Top 10 by avg 30d volume:
+    KEL        => avg:    134,335,855  | updated: 2026-03-12 16:10:48
+    BOP        => avg:     36,874,139  | updated: 2026-03-12 16:10:22
+    CNERGY     => avg:     29,268,597  | updated: 2026-03-12 16:10:22
+    PIBTL      => avg:     16,707,199  | updated: 2026-03-12 16:10:56
+    UNITY      => avg:     15,049,212  | updated: 2026-03-12 16:11:06
+    NBP        => avg:     13,675,813  | updated: 2026-03-12 16:10:56
+    PTC        => avg:     10,656,025  | updated: 2026-03-12 16:11:06
+    PPL        => avg:     10,453,651  | updated: 2026-03-12 16:10:56
+    HUMNL      => avg:      8,018,039  | updated: 2026-03-12 16:10:48
+    FFL        => avg:      7,036,723  | updated: 2026-03-12 16:10:39
+
+================================================================================
+STEP 3: Volume Spike Screener Dry Run
+================================================================================
+  Current PKT Time: 17:21:11
+  Hours since 9:30 AM: 7.85
+  Hours capped: 6.00
+  Stocks scraped from PSX: 200
+
+  SYMBOL        TODAY_VOL     PROJ_VOL      AVG_VOL    SPIKE    PRICE      CHG
+  ---------------------------------------------------------------------------
+  AGP           1,202,211    1,202,211      769,133    1.56x   203.89   +8.11% GRN
+  AICL          1,024,928    1,024,928      677,652    1.51x    76.38   +2.18% GRN
+  AIRLINK         813,102      813,102    1,107,697    0.73x   135.95   -1.98% 
+  BAFL          2,828,606    2,828,606    2,934,568    0.96x   115.20   -1.59% 
+  BAHL            230,437      230,437      963,588    0.24x   157.92   -2.31% 
+  DGKC          3,393,757    3,393,757    2,569,184    1.32x   166.27   -3.56% 
+  EFERT        11,917,223   11,917,223    1,949,840    6.11x   207.79   +1.25% RED
+  FCCL         14,527,732   14,527,732    5,792,448    2.51x    39.41   -4.51% YLW
+  KOHC            802,133      802,133      721,058    1.11x    77.93   -3.67% 
+  LOTCHEM       5,317,536    5,317,536    3,503,845    1.52x    22.54   -0.22% GRN
+  MCB           1,126,543    1,126,543      680,367    1.66x   361.33   -2.96% GRN
+  SYS           3,733,638    3,733,638    3,217,716    1.16x   122.14   +5.41% 
+
+  Analyzed: 45 liquid stocks | Spikes >= 1.5x: 6
+
+  get_volume_spikes() returned: 6 spikes
+    EFERT      => 6.11x  (today: 11,917,223 vs avg: 1,949,840)
+    FCCL       => 2.51x  (today: 14,527,732 vs avg: 5,792,448)
+    MCB        => 1.66x  (today: 1,126,543 vs avg: 680,367)
+    AGP        => 1.56x  (today: 1,202,211 vs avg: 769,133)
+    LOTCHEM    => 1.52x  (today: 5,317,536 vs avg: 3,503,845)
+    AICL       => 1.51x  (today: 1,024,928 vs avg: 677,652)
+
+================================================================================
+STEP 4: Cross-Verify Top Spike (PSX vs yFinance)
+================================================================================
+  Testing top spike: EFERT
+  PSX Scrape => Price:207.79, Vol:11,917,223, Spike:6.11x
+  yFinance returned empty for EFERT.KA
+
+================================================================================
+CHECKLIST SUMMARY
+================================================================================
+  [PASS] Step 1: yFinance returns PSX data (9/10)
+  [PASS] Step 2: Baseline volumes sensible
+  [PASS] Step 3: Screener finds spikes (6 found)
+  [INFO] Step 4: See cross-verification above
+  [INFO] Step 5: Scheduler running (check terminal)
+  [TODO] Step 6: Add /api/health endpoint
+================================================================================

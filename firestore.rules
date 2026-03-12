@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /market_data/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /market_movers/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /market_sectors/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /charts/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /expected_movers/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /market_watch/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /volume_spikes/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    match /{document=**} {
+      // By default, only authenticated users can read and write to the database.
+      allow read, write: if request.auth != null;
+    }
+  }
+}
