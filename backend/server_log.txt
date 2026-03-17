@@ -1,0 +1,1208 @@
+Firebase initialized successfully.
+Firebase initialized successfully.
+[2026-03-17 19:49:06] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 19:49:20] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 19:49:23] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 19:49:23] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 19:49:23] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 19:49:23] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 19:49:23] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 19:49:23] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 19:49:23] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 19:49:23] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 19:49:23] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 19:49:23] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 19:49:23] INFO: Scheduler started
+[2026-03-17 19:49:23] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 19:49:23] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 19:49:23] INFO: [2026-03-17 19:49:23] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=450740.3 PKR/10g, Oil=$101.6/bbl
+[2026-03-17 19:49:27] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 19:49:29] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-17 19:49:29] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 19:49:41] ERROR: $AGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:49:43] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:49:44] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:49:46] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:49:49] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:49:51] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:49:52] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:49:55] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:49:58] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:01] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:03] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:05] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:07] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:10] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:11] INFO: API: GET /api/foreign-flow?days=5
+[2026-03-17 19:50:12] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:12] INFO: Fetching yfinance index data...
+[2026-03-17 19:50:15] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:50:15] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE.KA"}}}
+[2026-03-17 19:50:15] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE100.KA"}}}
+[2026-03-17 19:50:16] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:17] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:50:18] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:50:18] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 19:50:18] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:23] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:30] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:34] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:36] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:37] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:40] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:44] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:46] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:48] INFO: API: GET /api/foreign-flow?days=5
+[2026-03-17 19:50:48] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:48] INFO: Fetching yfinance index data...
+[2026-03-17 19:50:49] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:50:49] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:50:50] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:50:50] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 19:50:50] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:54] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:56] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:57] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:50:59] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:01] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:04] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:08] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:11] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:12] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:15] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:18] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:23] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:24] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:27] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:29] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:30] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:34] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:37] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:39] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:42] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:44] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:46] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:48] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:49] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:51] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 19:51:51] INFO: [OK] Volume spikes detected: 0 high spikes
+[2026-03-17 19:51:56] INFO: [OK] Successfully synced to Firebase | 475 stocks | 0 spike alerts
+[2026-03-17 19:51:56.550583+05:00] --- STARTING PHASE 1 PIPELINE ---
+[OK] PSX Announcements: Synced 7 new entries.
+Scraping Dawn Business...
+  - Stored article from Dawn Business | Tickers: []
+  - Stored article from Dawn Business | Tickers: ['OGDC']
+  - Stored article from Dawn Business | Tickers: ['OGDC']
+[2026-03-17 19:52:25] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.1100303756, 'policy_rate': 17.5, 'crude_oil': 93.86000061035156}
+[2026-03-17 19:52:29.822825+05:00] --- PIPELINE COMPLETE ---
+[2026-03-17 19:52:29] INFO: --- AI PULSE START ---
+[2026-03-17 19:52:36] INFO: Using Groq (Llama-3) for AI brief generation...
+[2026-03-17 19:52:39] INFO: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-03-17 19:52:40] INFO: [OK] AI Market Brief updated.
+[2026-03-17 19:52:40] INFO: Updating ticker signals...
+[2026-03-17 19:52:41] INFO: --- AI PULSE COMPLETE ---
+[2026-03-17 19:52:41] INFO: --- INITIAL DATA SYNC COMPLETE ---
+[2026-03-17 19:53:24] INFO: API: GET /api/foreign-flow?days=5
+[2026-03-17 19:53:24] INFO: Fetching yfinance index data...
+[2026-03-17 19:53:26] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:53:26] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:53:26] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:53:26] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 19:53:40] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 19:53:40] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 19:53:41] INFO: Fetching yfinance index data...
+[2026-03-17 19:53:41] INFO: Fetching yfinance index data...
+[2026-03-17 19:53:42] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:53:42] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:53:42] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:53:42] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:53:42] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 19:53:42] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:53:42] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:53:42] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 19:56:52] INFO: API: GET /api/foreign-flow?days=5
+[2026-03-17 19:56:53] INFO: Fetching yfinance index data...
+[2026-03-17 19:56:56] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:56:56] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:56:56] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 19:56:56] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:02:43] INFO: API: GET /api/foreign-flow?days=2
+[2026-03-17 20:02:45] INFO: Fetching yfinance index data...
+[2026-03-17 20:02:48] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:02:48] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:02:48] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:02:48] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:06:10] INFO: API: GET /api/foreign-flow?days=2
+[2026-03-17 20:06:11] INFO: Fetching yfinance index data...
+[2026-03-17 20:06:13] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:06:13] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:06:13] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:06:13] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:08:30] INFO: API: GET /api/foreign-flow?days=5
+[2026-03-17 20:08:30] INFO: Fetching yfinance index data...
+[2026-03-17 20:08:32] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:08:32] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:08:32] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:08:32] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:11:13] INFO: API: GET /api/foreign-flow?days=5
+[2026-03-17 20:11:15] INFO: Fetching yfinance index data...
+[2026-03-17 20:11:17] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:11:17] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:11:17] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:11:17] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:13:33] INFO: API: GET /api/foreign-flow?days=5
+[2026-03-17 20:13:34] INFO: Fetching yfinance index data...
+[2026-03-17 20:13:36] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:13:36] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:13:36] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:13:36] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:14:32] INFO: API: GET /api/foreign-flow?days=5
+[2026-03-17 20:14:32] INFO: Fetching yfinance index data...
+[2026-03-17 20:14:34] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:14:34] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:14:34] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:14:34] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:20:35] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:20:37] INFO: Fetching yfinance index data...
+[2026-03-17 20:20:38] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:20:38] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:20:38] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:20:38] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:20:39] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:20:40] INFO: Fetching yfinance index data...
+[2026-03-17 20:20:42] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:20:42] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:20:42] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:20:42] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:25:12] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:25:12] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:25:14] INFO: Fetching yfinance index data...
+[2026-03-17 20:25:14] INFO: Fetching yfinance index data...
+[2026-03-17 20:25:15] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:25:15] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:25:15] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:25:15] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:25:15] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:25:15] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:25:15] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:25:15] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:34:18] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:34:20] INFO: Fetching yfinance index data...
+[2026-03-17 20:34:21] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:21] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:22] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:22] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:34:22] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:34:23] INFO: Fetching yfinance index data...
+[2026-03-17 20:34:25] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:25] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:25] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:25] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:34:26] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:34:27] INFO: Fetching yfinance index data...
+[2026-03-17 20:34:28] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:28] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:28] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:28] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:34:29] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:34:30] INFO: Fetching yfinance index data...
+[2026-03-17 20:34:31] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:31] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:31] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:34:31] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:36:05] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:36:06] INFO: Fetching yfinance index data...
+[2026-03-17 20:36:07] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:36:07] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:36:07] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:36:07] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:36:07] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:36:09] INFO: Fetching yfinance index data...
+[2026-03-17 20:36:10] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:36:10] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:36:10] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:36:10] WARNING: No yfinance data found for indices, using fallback.
+Firebase initialized successfully.
+[2026-03-17 20:36:30] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 20:36:44] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 20:36:46] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:36:46] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:36:46] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:36:46] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:36:46] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:36:46] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:36:46] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:36:46] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:36:46] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:36:46] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:36:46] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 20:36:46] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-17 20:36:46] INFO: Scheduler started
+[2026-03-17 20:36:46] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 20:36:46] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 20:36:46] INFO: [2026-03-17 20:36:46] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=450344.7 PKR/10g, Oil=$101.77/bbl
+[2026-03-17 20:36:49] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 20:36:51] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-17 20:36:51] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 20:37:03] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:05] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:06] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:09] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:10] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:12] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:15] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:17] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:20] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:21] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:23] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:25] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:27] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:29] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:30] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:32] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:33] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:39] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:43] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:37:44] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:44] INFO: Fetching yfinance index data...
+[2026-03-17 20:37:46] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^KSE100"}}}
+[2026-03-17 20:37:47] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE.KA"}}}
+[2026-03-17 20:37:47] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:48] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:37:48] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:37:49] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:37:49] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:37:49] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:49] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:37:51] INFO: Fetching yfinance index data...
+[2026-03-17 20:37:52] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:37:52] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:37:52] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:53] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:37:53] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:37:54] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:37:55] INFO: Fetching yfinance index data...
+[2026-03-17 20:37:57] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:37:57] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:37:57] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:37:57] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:37:57] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:37:59] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:01] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:02] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:05] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:07] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:08] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:10] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:12] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:15] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:18] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:21] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:22] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:25] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:28] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:29] ERROR: $^KSE100: possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:38:30] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:38:30] ERROR: Error fetching chart data: 404: No data found for symbol
+[2026-03-17 20:38:32] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:33] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:36] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:37] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:39] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:43] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:45] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:48] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:50] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:53] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:55] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:56] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:57] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:59] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:38:59] INFO: [OK] Volume spikes detected: 0 high spikes
+[2026-03-17 20:39:03] INFO: [OK] Successfully synced to Firebase | 475 stocks | 0 spike alerts
+[2026-03-17 20:39:03.199047+05:00] --- STARTING PHASE 1 PIPELINE ---
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+[2026-03-17 20:39:26] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.110048633, 'policy_rate': 17.5, 'crude_oil': 94.18000030517578}
+[2026-03-17 20:39:30.003112+05:00] --- PIPELINE COMPLETE ---
+[2026-03-17 20:39:30] INFO: --- AI PULSE START ---
+[2026-03-17 20:39:31] INFO: Market brief for 2026-03-17 already exists.
+[2026-03-17 20:39:31] INFO: Updating ticker signals...
+[2026-03-17 20:39:32] INFO: --- AI PULSE COMPLETE ---
+[2026-03-17 20:39:32] INFO: --- INITIAL DATA SYNC COMPLETE ---
+[2026-03-17 20:46:09] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:46:11] INFO: Fetching yfinance index data...
+[2026-03-17 20:46:12] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:12] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:12] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:12] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:46:13] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:46:14] INFO: Fetching yfinance index data...
+[2026-03-17 20:46:16] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:16] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:16] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:16] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:46:16] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:46:17] INFO: Fetching yfinance index data...
+[2026-03-17 20:46:18] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:18] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:18] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:18] WARNING: No yfinance data found for indices, using fallback.
+Firebase initialized successfully.
+[2026-03-17 20:46:26] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 20:46:29] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 20:46:31] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:46:31] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:46:31] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:46:31] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:46:31] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:46:31] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:46:31] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:46:31] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:46:31] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:46:31] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:46:31] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 20:46:31] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-17 20:46:31] INFO: Scheduler started
+[2026-03-17 20:46:31] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 20:46:31] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 20:46:31] INFO: [2026-03-17 20:46:31] Starting market data update...
+[2026-03-17 20:46:31] INFO: ✓ Scheduler shutdown complete
+[2026-03-17 20:46:31] INFO: Scheduler has been shut down
+[2026-03-17 20:46:35] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:46:36] INFO: Fetching yfinance index data...
+[2026-03-17 20:46:38] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:38] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:38] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:38] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:46:38] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:46:39] INFO: Fetching yfinance index data...
+[2026-03-17 20:46:40] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:40] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:40] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:40] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:46:41] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:46:42] INFO: Fetching yfinance index data...
+[2026-03-17 20:46:43] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:43] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:43] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:46:43] WARNING: No yfinance data found for indices, using fallback.
+Firebase initialized successfully.
+[2026-03-17 20:47:53] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 20:47:58] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 20:48:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:48:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:48:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:48:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:48:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:48:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:48:00] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:48:00] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:48:00] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:48:00] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:48:00] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 20:48:00] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-17 20:48:00] INFO: Scheduler started
+[2026-03-17 20:48:00] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 20:48:00] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 20:48:00] INFO: [2026-03-17 20:48:00] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=448906.3 PKR/10g, Oil=$102.72/bbl
+[2026-03-17 20:48:04] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 20:48:06] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-17 20:48:06] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 20:48:18] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:19] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:21] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:24] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:25] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:27] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:29] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:32] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:35] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:37] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:38] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:41] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:43] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:45] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:46] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:48] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:49] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:48:56] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:00] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:02] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:03] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:06] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:10] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:12] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:14] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:15] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:18] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:19] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:21] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:23] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:25] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:27] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:31] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:34] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:35] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:38] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:42] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:46] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:47] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:50] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:51] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:53] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:49:57] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:50:00] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:50:02] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:50:05] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:50:08] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:50:09] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:50:11] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:50:12] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:50:14] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:50:14] INFO: [OK] Volume spikes detected: 0 high spikes
+[2026-03-17 20:50:17] INFO: [OK] Successfully synced to Firebase | 475 stocks | 0 spike alerts
+[2026-03-17 20:50:17.949405+05:00] --- STARTING PHASE 1 PIPELINE ---
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+[2026-03-17 20:50:41] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.1100446706, 'policy_rate': 17.5, 'crude_oil': 94.9000015258789}
+[2026-03-17 20:50:44.956056+05:00] --- PIPELINE COMPLETE ---
+[2026-03-17 20:50:44] INFO: --- AI PULSE START ---
+[2026-03-17 20:50:45] INFO: Market brief for 2026-03-17 already exists.
+[2026-03-17 20:50:46] INFO: Updating ticker signals...
+[2026-03-17 20:50:46] INFO: --- AI PULSE COMPLETE ---
+[2026-03-17 20:50:46] INFO: --- INITIAL DATA SYNC COMPLETE ---
+[2026-03-17 20:51:08] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:51:08] INFO: Fetching yfinance index data...
+[2026-03-17 20:51:10] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:11] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^KSE100"}}}
+[2026-03-17 20:51:11] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE100.KA"}}}
+[2026-03-17 20:51:12] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:12] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:12] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:51:12] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:51:13] INFO: Fetching yfinance index data...
+[2026-03-17 20:51:14] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:14] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:14] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:14] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:51:15] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:51:15] INFO: Fetching yfinance index data...
+[2026-03-17 20:51:16] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:16] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:16] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:16] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:51:50] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:51:50] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:51:50] INFO: Fetching yfinance index data...
+[2026-03-17 20:51:51] INFO: Fetching yfinance index data...
+[2026-03-17 20:51:52] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:52] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:52] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:52] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:52] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:52] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:51:52] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:51:52] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:52:59] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:53:00] INFO: Fetching yfinance index data...
+[2026-03-17 20:53:01] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:01] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:01] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:01] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:53:02] INFO: ✓ Scheduler shutdown complete
+[2026-03-17 20:53:02] INFO: Scheduler has been shut down
+Firebase initialized successfully.
+[2026-03-17 20:53:10] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 20:53:15] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 20:53:17] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:53:17] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:53:17] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:53:17] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:53:17] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:53:17] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:53:17] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:53:17] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:53:17] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:53:17] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:53:17] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 20:53:17] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-17 20:53:17] INFO: Scheduler started
+[2026-03-17 20:53:17] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 20:53:17] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 20:53:17] INFO: [2026-03-17 20:53:17] Starting market data update...
+[2026-03-17 20:53:17] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:53:17] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:53:18] INFO: Fetching yfinance index data...
+[2026-03-17 20:53:19] INFO: Fetching yfinance index data...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=447980.3 PKR/10g, Oil=$102.59/bbl
+[2026-03-17 20:53:20] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:20] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^KSE100"}}}
+[2026-03-17 20:53:20] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE.KA"}}}
+[2026-03-17 20:53:21] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+[2026-03-17 20:53:21] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:21] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:21] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:21] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:53:22] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:23] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:23] WARNING: No yfinance data found for indices, using fallback.
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 20:53:23] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-17 20:53:23] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+[2026-03-17 20:53:23] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:53:24] INFO: Fetching yfinance index data...
+[2026-03-17 20:53:26] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:26] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:26] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:53:26] WARNING: No yfinance data found for indices, using fallback.
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 20:53:36] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:53:38] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:53:40] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:53:43] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:53:44] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:53:46] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:53:49] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:53:52] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:53:54] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:53:56] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:53:58] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:00] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:04] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:05] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:07] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:09] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:10] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:17] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:22] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:23] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:25] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:28] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:33] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:34] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:36] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:38] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:42] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:43] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:45] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:47] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:49] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:51] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:55] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:54:58] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:00] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:03] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:06] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:11] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:12] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:15] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:17] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:18] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:20] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:55:21] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:55:22] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:55:22] ERROR: Error fetching chart data: 404: No data found for symbol from yfinance
+[2026-03-17 20:55:23] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:26] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:29] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:32] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:35] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:36] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:38] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:39] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:41] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:55:41] INFO: [OK] Volume spikes detected: 0 high spikes
+[2026-03-17 20:55:45] INFO: [OK] Successfully synced to Firebase | 475 stocks | 0 spike alerts
+[2026-03-17 20:55:45.010194+05:00] --- STARTING PHASE 1 PIPELINE ---
+[2026-03-17 20:55:55] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:55:55] INFO: Fetching yfinance index data...
+[2026-03-17 20:55:56] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:55:57] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:55:57] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:55:57] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:55:57] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:55:58] INFO: Fetching yfinance index data...
+[2026-03-17 20:55:59] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:55:59] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:55:59] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:55:59] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:56:01] INFO: ✓ Scheduler shutdown complete
+[2026-03-17 20:56:01] INFO: Scheduler has been shut down
+Firebase initialized successfully.
+[2026-03-17 20:56:11] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 20:56:18] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 20:56:20] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:56:20] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:56:20] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:56:20] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:56:20] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:56:20] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:56:20] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:56:20] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:56:20] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:56:20] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:56:20] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 20:56:20] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-17 20:56:20] INFO: Scheduler started
+[2026-03-17 20:56:20] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 20:56:20] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 20:56:20] INFO: [2026-03-17 20:56:20] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=448861.3 PKR/10g, Oil=$102.61/bbl
+[2026-03-17 20:56:23] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^KSE100"}}}
+[2026-03-17 20:56:24] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+[2026-03-17 20:56:25] ERROR: $^KSE100: possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")
+Parsing 476 rows from PSX Market Watch...
+[2026-03-17 20:56:27] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE100.KA"}}}
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 20:56:27] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-17 20:56:27] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+[2026-03-17 20:56:28] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:29] ERROR: $KSE.KA: possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 20:56:35] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:56:35] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:56:35] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:56:36] INFO: Fetching yfinance index data...
+[2026-03-17 20:56:36] INFO: Fetching yfinance index data...
+[2026-03-17 20:56:36] INFO: Fetching yfinance index data...
+[2026-03-17 20:56:37] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:37] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:37] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:37] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:37] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:56:37] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:38] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:38] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:38] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:56:38] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:56:39] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:39] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:39] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:56:39] INFO: Fetching yfinance index data...
+[2026-03-17 20:56:40] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:40] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:40] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:40] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:56:41] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:56:41] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:56:42] INFO: Fetching yfinance index data...
+[2026-03-17 20:56:43] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:43] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:43] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:56:43] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:56:44] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:56:46] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:56:49] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:56:50] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:56:52] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:56:54] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:56:57] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:56:59] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:57:01] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:57:02] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:57:04] ERROR: $^KSE100: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:05] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:05] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:57:06] ERROR: $KSE.KA: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:09] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:57:11] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:57:16] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:57:18] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:57:20] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:57:21] INFO: ✓ Scheduler shutdown complete
+[2026-03-17 20:57:21] INFO: Scheduler has been shut down
+Firebase initialized successfully.
+[2026-03-17 20:57:31] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 20:57:37] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 20:57:39] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:57:39] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:57:39] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:57:39] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:57:39] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:57:39] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 20:57:39] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:57:39] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 20:57:39] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:57:39] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 20:57:39] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 20:57:39] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-17 20:57:39] INFO: Scheduler started
+[2026-03-17 20:57:39] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 20:57:39] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 20:57:39] INFO: [2026-03-17 20:57:39] Starting market data update...
+[2026-03-17 20:57:39] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:57:39] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:57:40] INFO: Fetching yfinance index data...
+[2026-03-17 20:57:41] INFO: Fetching yfinance index data...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=449068.1 PKR/10g, Oil=$102.63/bbl
+[2026-03-17 20:57:42] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+[2026-03-17 20:57:42] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:42] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:42] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:42] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:43] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE.KA"}}}
+[2026-03-17 20:57:43] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE100.KA"}}}
+[2026-03-17 20:57:44] ERROR: $^KSE100: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 20:57:45] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:45] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:45] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:45] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-17 20:57:45] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+[2026-03-17 20:57:45] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:57:45] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:57:45] ERROR: $KSE.KA: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:54] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:57:55] INFO: Fetching yfinance index data...
+Parsing 476 rows from PSX Market Watch...
+[2026-03-17 20:57:56] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:56] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 20:57:56] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:57:56] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:58:01] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:02] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:04] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:07] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:09] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:11] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:14] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:17] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:19] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:21] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:23] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:25] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:28] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:29] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:31] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:33] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:34] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:38] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:58:39] INFO: Fetching yfinance index data...
+[2026-03-17 20:58:41] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:58:41] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:58:41] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:58:41] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:58:42] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:42] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:58:43] INFO: Fetching yfinance index data...
+[2026-03-17 20:58:45] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:58:45] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:58:45] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:58:45] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:58:46] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:48] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:50] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:52] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:56] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:58:58] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:00] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:01] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:59:01] INFO: Fetching yfinance index data...
+[2026-03-17 20:59:02] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:03] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:03] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:03] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:03] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:59:04] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:59:05] INFO: Fetching yfinance index data...
+[2026-03-17 20:59:05] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:06] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:06] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:06] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:06] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:59:08] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:09] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:11] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:13] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:15] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:19] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:22] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:23] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:25] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:59:26] INFO: Fetching yfinance index data...
+[2026-03-17 20:59:27] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:27] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:27] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:27] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:27] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:59:28] INFO: API: GET /api/foreign-flow?days=90
+[2026-03-17 20:59:29] INFO: Fetching yfinance index data...
+[2026-03-17 20:59:30] ERROR: $^KSE100: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:30] ERROR: $KSE.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:30] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 20:59:30] WARNING: No yfinance data found for indices, using fallback.
+[2026-03-17 20:59:31] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:36] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:37] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:39] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:41] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:42] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:45] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:47] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:49] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:50] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:53] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:54] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:56] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 20:59:58] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:00:00] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:00:00] INFO: [OK] Volume spikes detected: 0 high spikes
+[2026-03-17 21:00:04] INFO: [OK] Successfully synced to Firebase | 475 stocks | 0 spike alerts
+[2026-03-17 21:00:04.427002+05:00] --- STARTING PHASE 1 PIPELINE ---
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+[2026-03-17 21:00:28] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.110037265, 'policy_rate': 17.5, 'crude_oil': 95.05000305175781}
+[2026-03-17 21:00:31.533280+05:00] --- PIPELINE COMPLETE ---
+[2026-03-17 21:00:31] INFO: --- AI PULSE START ---
+[2026-03-17 21:00:32] INFO: Market brief for 2026-03-17 already exists.
+[2026-03-17 21:00:32] INFO: Updating ticker signals...
+[2026-03-17 21:00:33] INFO: --- AI PULSE COMPLETE ---
+[2026-03-17 21:00:33] INFO: --- INITIAL DATA SYNC COMPLETE ---
+[2026-03-17 21:09:17] INFO: ✓ Scheduler shutdown complete
+[2026-03-17 21:09:17] INFO: Scheduler has been shut down
+Firebase initialized successfully.
+[2026-03-17 21:09:25] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 21:09:30] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 21:09:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:09:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:09:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:09:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:09:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:09:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:09:33] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 21:09:33] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 21:09:33] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 21:09:33] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 21:09:33] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 21:09:33] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-17 21:09:33] INFO: Scheduler started
+[2026-03-17 21:09:33] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 21:09:33] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 21:09:33] INFO: [2026-03-17 21:09:33] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=449634.5 PKR/10g, Oil=$102.66/bbl
+[2026-03-17 21:09:36] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 21:09:40] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-17 21:09:40] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 21:09:52] INFO: ✓ Scheduler shutdown complete
+[2026-03-17 21:09:52] INFO: Scheduler has been shut down
+Firebase initialized successfully.
+[2026-03-17 21:10:00] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 21:10:04] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 21:10:07] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:10:07] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:10:07] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:10:07] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:10:07] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:10:07] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:10:07] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 21:10:07] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 21:10:07] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 21:10:07] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 21:10:07] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 21:10:07] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-17 21:10:07] INFO: Scheduler started
+[2026-03-17 21:10:07] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 21:10:07] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 21:10:07] INFO: [2026-03-17 21:10:07] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=449742.4 PKR/10g, Oil=$102.67/bbl
+[2026-03-17 21:10:10] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 21:10:12] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-17 21:10:12] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 21:10:24] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:26] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:27] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:31] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:32] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:34] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:37] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:40] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:42] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:44] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:46] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:48] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:51] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:53] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:55] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:57] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:10:58] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:11:05] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:11:10] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:11:12] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:11:14] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:11:16] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:11:21] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:11:23] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:11:24] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:11:26] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:11:27] INFO: ✓ Scheduler shutdown complete
+[2026-03-17 21:11:27] INFO: Scheduler has been shut down
+Firebase initialized successfully.
+[2026-03-17 21:11:34] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 21:11:39] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 21:11:40] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:11:40] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:11:40] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:11:40] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:11:40] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:11:40] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:11:40] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 21:11:40] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 21:11:40] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 21:11:40] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 21:11:40] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 21:11:40] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-17 21:11:40] INFO: Scheduler started
+[2026-03-17 21:11:40] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 21:11:40] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 21:11:40] INFO: [2026-03-17 21:11:40] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=449724.4 PKR/10g, Oil=$102.56/bbl
+[2026-03-17 21:11:44] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 21:11:47] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-17 21:11:47] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 21:12:02] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:03] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:05] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:08] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:10] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:11] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:14] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:17] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:21] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:23] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:24] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:27] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:29] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:31] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:32] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:34] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:35] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:41] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:46] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:48] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:49] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:52] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:56] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:57] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:12:59] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:00] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:03] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:04] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:05] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:07] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:08] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:10] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:14] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:17] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:19] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:21] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:24] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:28] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:30] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:32] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:33] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:35] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:38] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:41] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:43] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:46] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:49] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:50] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:52] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:53] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:55] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:13:55] INFO: [OK] Volume spikes detected: 0 high spikes
+[2026-03-17 21:13:58] INFO: [OK] Successfully synced to Firebase | 475 stocks | 0 spike alerts
+[2026-03-17 21:13:58.618907+05:00] --- STARTING PHASE 1 PIPELINE ---
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+[2026-03-17 21:14:23] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.1100450507, 'policy_rate': 17.5, 'crude_oil': 95.0199966430664}
+[2026-03-17 21:14:31.055459+05:00] --- PIPELINE COMPLETE ---
+[2026-03-17 21:14:31] INFO: --- AI PULSE START ---
+[2026-03-17 21:14:33] INFO: Market brief for 2026-03-17 already exists.
+[2026-03-17 21:14:33] INFO: Updating ticker signals...
+[2026-03-17 21:14:34] INFO: --- AI PULSE COMPLETE ---
+[2026-03-17 21:14:34] INFO: --- INITIAL DATA SYNC COMPLETE ---
+[2026-03-17 21:18:26] INFO: ✓ Scheduler shutdown complete
+[2026-03-17 21:18:26] INFO: Scheduler has been shut down
+Firebase initialized successfully.
+[2026-03-17 21:18:34] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-17 21:18:39] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-17 21:18:42] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:18:42] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:18:42] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:18:42] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:18:42] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:18:42] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-17 21:18:42] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 21:18:42] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-17 21:18:42] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 21:18:42] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-17 21:18:42] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-17 21:18:42] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-17 21:18:42] INFO: Scheduler started
+[2026-03-17 21:18:42] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-17 21:18:42] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-17 21:18:42] INFO: [2026-03-17 21:18:42] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=449292.9 PKR/10g, Oil=$102.61/bbl
+[2026-03-17 21:18:45] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 21:18:48] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-17 21:18:48] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-17 21:19:01] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:03] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:04] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:08] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:09] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:11] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:15] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:18] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:20] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:22] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:23] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:26] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:29] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:30] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:32] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:34] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:35] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:41] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^KSE100"}}}
+[2026-03-17 21:19:42] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:43] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:19:45] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE100.KA"}}}
+[2026-03-17 21:19:46] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:47] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:19:48] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:49] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:19:50] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:52] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:55] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:19:56] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:19:56] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:19:58] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:19:59] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:01] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:03] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:06] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:07] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:08] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:09] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:20:10] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:20:10] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:11] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:20:12] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:14] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:17] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:20:18] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:20:18] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:20:20] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:22] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:24] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:27] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:31] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:36] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:37] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:40] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:41] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:43] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:46] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:47] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:49] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:51] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:53] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:54] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:56] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:57] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:59] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-17 21:20:59] INFO: [OK] Volume spikes detected: 0 high spikes
+[2026-03-17 21:21:02] INFO: [OK] Successfully synced to Firebase | 475 stocks | 0 spike alerts
+[2026-03-17 21:21:02.396034+05:00] --- STARTING PHASE 1 PIPELINE ---
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+[2026-03-17 21:21:26] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.1100384505, 'policy_rate': 17.5, 'crude_oil': 94.44000244140625}
+[2026-03-17 21:21:30.236600+05:00] --- PIPELINE COMPLETE ---
+[2026-03-17 21:21:30] INFO: --- AI PULSE START ---
+[2026-03-17 21:21:31] INFO: Market brief for 2026-03-17 already exists.
+[2026-03-17 21:21:31] INFO: Updating ticker signals...
+[2026-03-17 21:21:32] INFO: --- AI PULSE COMPLETE ---
+[2026-03-17 21:21:32] INFO: --- INITIAL DATA SYNC COMPLETE ---
+[2026-03-17 21:25:55] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:25:56] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:25:57] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:26:07] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:26:08] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:26:09] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:26:21] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:26:22] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:26:23] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:26:29] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:26:30] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:26:31] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:34:36] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:34:37] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:34:38] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:34:46] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:34:47] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:34:48] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:34:54] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:34:55] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:34:56] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:01] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:02] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:03] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:10] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:11] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:12] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:40] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:41] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:42] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:49] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:50] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-17 21:35:51] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")

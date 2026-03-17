@@ -1,16 +1,18 @@
 import { useState, useEffect, useMemo } from "react";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
-import { 
-  AreaChart, 
-  Area, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  ResponsiveContainer 
-} from 'recharts';
-import { Search, TrendingUp, TrendingDown, Activity, ExternalLink, Info, Clock, Lock } from "lucide-react";
+import {
+  Search,
+  TrendingUp,
+  TrendingDown,
+  Activity,
+  ExternalLink,
+  Info,
+  Clock,
+  Lock,
+} from "lucide-react";
+import MarketInsights from "./MarketInsights";
+import KSEChart from "./KSEChart";
 
 interface MarketData {
   kse100: { value: number; change: number };
@@ -31,15 +33,7 @@ interface Stock {
   volume?: string;
 }
 
-interface SectorData {
-  name: string;
-  change: number;
-}
 
-interface ChartPoint {
-  time: string;
-  value: number;
-}
 
 interface VolumeSpike {
   symbol: string;
@@ -65,20 +59,21 @@ export default function Dashboard() {
   const [marketData, setMarketData] = useState<MarketData | null>(null);
   const [gainers, setGainers] = useState<Stock[]>([]);
   const [losers, setLosers] = useState<Stock[]>([]);
-  const [sectors, setSectors] = useState<SectorData[]>([]);
-  const [kse100Chart, setKse100Chart] = useState<ChartPoint[]>([]);
-  const [kse30Chart, setKse30Chart] = useState<ChartPoint[]>([]);
   const [allStocks, setAllStocks] = useState<Stock[]>([]);
   const [volumeSpikes, setVolumeSpikes] = useState<VolumeSpike[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [predictionTimeframe, setPredictionTimeframe] = useState<"day" | "week" | "month">("day");
+  const [predictionTimeframe, setPredictionTimeframe] = useState<
+    "day" | "week" | "month"
+  >("day");
   const [predictions, setPredictions] = useState<any[]>([]);
   const [predictionUpdated, setPredictionUpdated] = useState<string>("");
 
   const MarketStatusBanner = () => {
     const phase = marketData?.phase || "CLOSED";
-    const date = marketData?.final_data_date || new Date().toLocaleTimeString([], { day: '2-digit', month: 'short' });
-    
+    const date =
+      marketData?.final_data_date ||
+      new Date().toLocaleTimeString([], { day: "2-digit", month: "short" });
+
     if (phase === "PRE_OPEN") {
       return (
         <div className="bg-bullish/10 border border-bullish/20 rounded-lg p-3 flex items-center justify-between">
@@ -94,9 +89,9 @@ export default function Dashboard() {
         </div>
       );
     }
-    
+
     if (phase === "OPEN") {
-       return (
+      return (
         <div className="bg-bullish/10 border border-bullish/20 rounded-lg p-3 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Activity className="w-4 h-4 text-bullish animate-pulse" />
@@ -130,70 +125,75 @@ export default function Dashboard() {
     });
 
     // Top Movers
-    const unsubMovers = onSnapshot(doc(db, "market_movers", "latest"), (doc) => {
-      if (doc.exists()) {
-        const data = doc.data();
-        setGainers(data?.top_gainers || []);
-        setLosers(data?.top_losers || []);
-      }
-    });
+    const unsubMovers = onSnapshot(
+      doc(db, "market_movers", "latest"),
+      (doc) => {
+        if (doc.exists()) {
+          const data = doc.data();
+          setGainers(data?.top_gainers || []);
+          setLosers(data?.top_losers || []);
+        }
+      },
+    );
 
-    // Sector Heatmap
-    const unsubSectors = onSnapshot(doc(db, "market_sectors", "latest"), (doc) => {
-      if (doc.exists()) setSectors(doc.data()?.sectors || []);
-    });
 
-    // Charts
-    const unsub100Chart = onSnapshot(doc(db, "charts", "kse100"), (doc) => {
-      if (doc.exists()) setKse100Chart(doc.data()?.points || []);
-    });
-    const unsub30Chart = onSnapshot(doc(db, "charts", "kse30"), (doc) => {
-      if (doc.exists()) setKse30Chart(doc.data()?.points || []);
-    });
 
     // Expanded Market Watch
-    const unsubAllStocks = onSnapshot(doc(db, "market_watch", "latest"), (doc) => {
-      if (doc.exists()) setAllStocks(doc.data()?.stocks || []);
-    });
+    const unsubAllStocks = onSnapshot(
+      doc(db, "market_watch", "latest"),
+      (doc) => {
+        if (doc.exists()) setAllStocks(doc.data()?.stocks || []);
+      },
+    );
 
     // Volume Spike Screener
-    const unsubSpikes = onSnapshot(doc(db, "volume_spikes", "latest"), (doc) => {
-      if (doc.exists()) {
-        setVolumeSpikes(doc.data()?.spikes || []);
-      }
-    });
+    const unsubSpikes = onSnapshot(
+      doc(db, "volume_spikes", "latest"),
+      (doc) => {
+        if (doc.exists()) {
+          setVolumeSpikes(doc.data()?.spikes || []);
+        }
+      },
+    );
 
     // AI Prediction Engine (Day/Week/Month)
-    const unsubDayPred = onSnapshot(doc(db, "predictions", "latest_day"), (doc) => {
-      if (predictionTimeframe === "day" && doc.exists()) {
-        const data = doc.data();
-        setPredictions(data.data || []);
-        setPredictionUpdated(data.updated_at);
-      }
-    });
+    const unsubDayPred = onSnapshot(
+      doc(db, "predictions", "latest_day"),
+      (doc) => {
+        if (predictionTimeframe === "day" && doc.exists()) {
+          const data = doc.data();
+          setPredictions(data.data || []);
+          setPredictionUpdated(data.updated_at);
+        }
+      },
+    );
 
-    const unsubWeekPred = onSnapshot(doc(db, "predictions", "latest_week"), (doc) => {
-      if (predictionTimeframe === "week" && doc.exists()) {
-        const data = doc.data();
-        setPredictions(data.data || []);
-        setPredictionUpdated(data.updated_at);
-      }
-    });
+    const unsubWeekPred = onSnapshot(
+      doc(db, "predictions", "latest_week"),
+      (doc) => {
+        if (predictionTimeframe === "week" && doc.exists()) {
+          const data = doc.data();
+          setPredictions(data.data || []);
+          setPredictionUpdated(data.updated_at);
+        }
+      },
+    );
 
-    const unsubMonthPred = onSnapshot(doc(db, "predictions", "latest_month"), (doc) => {
-      if (predictionTimeframe === "month" && doc.exists()) {
-        const data = doc.data();
-        setPredictions(data.data || []);
-        setPredictionUpdated(data.updated_at);
-      }
-    });
+    const unsubMonthPred = onSnapshot(
+      doc(db, "predictions", "latest_month"),
+      (doc) => {
+        if (predictionTimeframe === "month" && doc.exists()) {
+          const data = doc.data();
+          setPredictions(data.data || []);
+          setPredictionUpdated(data.updated_at);
+        }
+      },
+    );
 
     return () => {
       unsubData();
       unsubMovers();
-      unsubSectors();
-      unsub100Chart();
-      unsub30Chart();
+
       unsubAllStocks();
       unsubSpikes();
       unsubDayPred();
@@ -204,8 +204,8 @@ export default function Dashboard() {
 
   const filteredStocks = useMemo(() => {
     if (!searchQuery) return allStocks;
-    return allStocks.filter(s => 
-      s.symbol.toLowerCase().includes(searchQuery.toLowerCase())
+    return allStocks.filter((s) =>
+      s.symbol.toLowerCase().includes(searchQuery.toLowerCase()),
     );
   }, [allStocks, searchQuery]);
 
@@ -214,115 +214,11 @@ export default function Dashboard() {
       <MarketStatusBanner />
 
       {/* Index Performance Sections */}
-      <div className="grid grid-cols-2 gap-6">
-        <div className="bg-background-accent/40 border border-border/50 rounded-xl p-6 backdrop-blur-sm shadow-lg">
-          <div className="flex justify-between items-start mb-6">
-            <div>
-              <h2 className="text-content-secondary text-xs font-bold uppercase tracking-widest mb-1 flex items-center">
-                <Activity className="w-4 h-4 mr-2 text-bullish" />
-                KSE-100 Index
-                <InfoTooltip text="Tracks the performance of the top 100 companies listed on the Pakistan Stock Exchange by market capitalization." />
-              </h2>
-              <div className="flex items-baseline space-x-3">
-                <span className="text-4xl font-black font-mono tracking-tighter text-white">
-                  {marketData?.kse100?.value?.toLocaleString() || "---,---"}
-                </span>
-                <span className={`text-sm font-bold flex items-center ${(marketData?.kse100?.change || 0) >= 0 ? "text-bullish" : "text-bearish"}`}>
-                  {(marketData?.kse100?.change || 0) >= 0 ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
-                  {Math.abs(marketData?.kse100?.change || 0)}%
-                </span>
-              </div>
-            </div>
-            <div className="text-right flex flex-col items-end space-y-1">
-              <div className={`px-3 py-1 rounded-full text-[10px] font-black tracking-widest uppercase border ${marketData?.status === "OPEN" ? "bg-bullish/10 text-bullish border-bullish/20 animate-pulse" : "bg-white/5 text-content-muted border-white/5"}`}>
-                {marketData?.status || "CLOSED"}
-              </div>
-              <div className="text-[8px] font-black text-content-muted uppercase tracking-tighter bg-white/5 px-2 py-0.5 rounded border border-white/5">
-                Data Delayed 15m
-              </div>
-            </div>
-          </div>
-          
-          <div className="h-[180px] w-full mt-4 min-h-[180px]">
-            <ResponsiveContainer width="100%" height="100%" minHeight={180}>
-              <AreaChart data={kse100Chart}>
-                <defs>
-                  <linearGradient id="colorValue100" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#272A30" />
-                <XAxis dataKey="time" hide />
-                <YAxis hide domain={['auto', 'auto']} />
-                <Tooltip 
-                  contentStyle={{ backgroundColor: '#15181E', border: '1px solid #272A30', borderRadius: '8px' }}
-                  itemStyle={{ color: '#fff' }}
-                />
-                <Area 
-                  type="monotone" 
-                  dataKey="value" 
-                  stroke="#10b981" 
-                  strokeWidth={3}
-                  fillOpacity={1} 
-                  fill="url(#colorValue100)" 
-                  animationDuration={1500}
-                />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
+      {/* New Advanced KSE-100 Chart API Implementation */}
+      <KSEChart symbol="KSE100" />
+      
 
-        <div className="bg-background-accent/40 border border-border/50 rounded-xl p-6 backdrop-blur-sm shadow-lg">
-          <div className="flex justify-between items-start mb-6">
-            <div>
-              <h2 className="text-content-secondary text-xs font-bold uppercase tracking-widest mb-1 flex items-center">
-                <Activity className="w-4 h-4 mr-2 text-bullish" />
-                KSE-30 Index
-                <InfoTooltip text="Tracks the performance of the top 30 most liquid companies listed on the PSX." />
-              </h2>
-              <div className="flex items-baseline space-x-3">
-                <span className="text-4xl font-black font-mono tracking-tighter text-white">
-                  {marketData?.kse30?.value?.toLocaleString() || "---,---"}
-                </span>
-                <span className={`text-sm font-bold flex items-center ${(marketData?.kse30?.change || 0) >= 0 ? "text-bullish" : "text-bearish"}`}>
-                  {(marketData?.kse30?.change || 0) >= 0 ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
-                  {Math.abs(marketData?.kse30?.change || 0)}%
-                </span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="h-[180px] w-full mt-4 min-h-[180px]">
-            <ResponsiveContainer width="100%" height="100%" minHeight={180}>
-              <AreaChart data={kse30Chart}>
-                <defs>
-                  <linearGradient id="colorValue30" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#272A30" />
-                <XAxis dataKey="time" hide />
-                <YAxis hide domain={['auto', 'auto']} />
-                <Tooltip 
-                  contentStyle={{ backgroundColor: '#15181E', border: '1px solid #272A30', borderRadius: '8px' }}
-                  itemStyle={{ color: '#fff' }}
-                />
-                <Area 
-                  type="monotone" 
-                  dataKey="value" 
-                  stroke="#10b981" 
-                  strokeWidth={3}
-                  fillOpacity={1} 
-                  fill="url(#colorValue30)" 
-                  animationDuration={1500}
-                />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </div>
+      <MarketInsights />
 
       <div className="bg-background-accent/40 border border-border/50 rounded-xl backdrop-blur-sm shadow-xl">
         <div className="px-6 py-4 border-b border-border/50 bg-white/5 flex justify-between items-center">
@@ -346,12 +242,16 @@ export default function Dashboard() {
             </div>
             <div className="px-3 py-1 bg-white/5 rounded-full border border-white/10">
               <span className="text-[10px] font-black text-content-muted uppercase tracking-widest">
-                Last updated: {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                Last updated:{" "}
+                {new Date().toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
               </span>
             </div>
           </div>
         </div>
-        
+
         <div className="p-0">
           <table className="w-full text-left border-collapse">
             <thead>
@@ -365,42 +265,61 @@ export default function Dashboard() {
               </tr>
             </thead>
             <tbody className="divide-y divide-border/20">
-              {volumeSpikes.length > 0 ? volumeSpikes.slice(0, 10).map((spike) => (
-                <tr key={spike.symbol} className="hover:bg-white/5 transition-all group">
-                  <td className="py-4 px-6">
-                    <span className="font-black text-white group-hover:text-bullish transition-colors">
-                      {spike.symbol}
-                    </span>
-                  </td>
-                  <td className="py-4 px-6 text-right font-mono text-xs text-white">
-                    {spike.today_vol >= 1000000 ? `${(spike.today_vol/1000000).toFixed(1)}M` : `${(spike.today_vol/1000).toFixed(1)}K`}
-                  </td>
-                  <td className="py-4 px-6 text-right font-mono text-xs text-content-muted">
-                    {spike.avg_vol >= 1000000 ? `${(spike.avg_vol/1000000).toFixed(1)}M` : `${(spike.avg_vol/1000).toFixed(1)}K`}
-                  </td>
-                  <td className="py-4 px-6 text-center">
-                    <div className="flex justify-center">
-                      <span className={`px-3 py-1 rounded-lg font-black text-xs ${
-                        spike.spike_ratio >= 4 ? "bg-bearish/20 text-bearish border border-bearish/30" :
-                        spike.spike_ratio >= 3 ? "bg-orange-500/20 text-orange-500 border border-orange-500/30" :
-                        "bg-bullish/20 text-bullish border border-bullish/30"
-                      }`}>
-                        {spike.spike_ratio}x
+              {volumeSpikes.length > 0 ? (
+                volumeSpikes.slice(0, 10).map((spike) => (
+                  <tr
+                    key={spike.symbol}
+                    className="hover:bg-white/5 transition-all group"
+                  >
+                    <td className="py-4 px-6">
+                      <span className="font-black text-white group-hover:text-bullish transition-colors">
+                        {spike.symbol}
                       </span>
-                    </div>
-                  </td>
-                  <td className="py-4 px-6 text-right font-mono font-bold text-white text-sm">
-                    {spike.price?.toFixed(2) || "0.00"}
-                  </td>
-                  <td className="py-4 px-6 text-right">
-                    <span className={`font-mono font-black text-xs ${(spike.change || 0) >= 0 ? "text-bullish" : "text-bearish"}`}>
-                      {(spike.change || 0) >= 0 ? "+" : ""}{(spike.change || 0).toFixed(2)}%
-                    </span>
-                  </td>
-                </tr>
-              )) : (
+                    </td>
+                    <td className="py-4 px-6 text-right font-mono text-xs text-white">
+                      {spike.today_vol >= 1000000
+                        ? `${(spike.today_vol / 1000000).toFixed(1)}M`
+                        : `${(spike.today_vol / 1000).toFixed(1)}K`}
+                    </td>
+                    <td className="py-4 px-6 text-right font-mono text-xs text-content-muted">
+                      {spike.avg_vol >= 1000000
+                        ? `${(spike.avg_vol / 1000000).toFixed(1)}M`
+                        : `${(spike.avg_vol / 1000).toFixed(1)}K`}
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <div className="flex justify-center">
+                        <span
+                          className={`px-3 py-1 rounded-lg font-black text-xs ${
+                            spike.spike_ratio >= 4
+                              ? "bg-bearish/20 text-bearish border border-bearish/30"
+                              : spike.spike_ratio >= 3
+                                ? "bg-orange-500/20 text-orange-500 border border-orange-500/30"
+                                : "bg-bullish/20 text-bullish border border-bullish/30"
+                          }`}
+                        >
+                          {spike.spike_ratio}x
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-6 text-right font-mono font-bold text-white text-sm">
+                      {spike.price?.toFixed(2) || "0.00"}
+                    </td>
+                    <td className="py-4 px-6 text-right">
+                      <span
+                        className={`font-mono font-black text-xs ${(spike.change || 0) >= 0 ? "text-bullish" : "text-bearish"}`}
+                      >
+                        {(spike.change || 0) >= 0 ? "+" : ""}
+                        {(spike.change || 0).toFixed(2)}%
+                      </span>
+                    </td>
+                  </tr>
+                ))
+              ) : (
                 <tr>
-                  <td colSpan={6} className="py-12 text-center text-content-muted text-xs font-bold uppercase tracking-[0.2em] opacity-50">
+                  <td
+                    colSpan={6}
+                    className="py-12 text-center text-content-muted text-xs font-bold uppercase tracking-[0.2em] opacity-50"
+                  >
                     No significant volume spikes detected so far...
                   </td>
                 </tr>
@@ -409,9 +328,14 @@ export default function Dashboard() {
           </table>
           <div className="px-6 py-3 bg-white/5 border-t border-border/50">
             <p className="text-[9px] text-content-muted font-bold leading-relaxed max-w-3xl">
-              <span className="text-bullish">PROJECTION LOGIC:</span> Volume is projected based on time elapsed since market open (9:30 AM PKT). 
-              Spike ratio = <span className="text-white">Projected Day Volume / 30-Day Avg Volume</span>. 
-              Filtering out stocks with average volume below 500K for high-reliability signals.
+              <span className="text-bullish">PROJECTION LOGIC:</span> Volume is
+              projected based on time elapsed since market open (9:30 AM PKT).
+              Spike ratio ={" "}
+              <span className="text-white">
+                Projected Day Volume / 30-Day Avg Volume
+              </span>
+              . Filtering out stocks with average volume below 500K for
+              high-reliability signals.
             </p>
           </div>
         </div>
@@ -426,15 +350,15 @@ export default function Dashboard() {
               Signal Scoring Engine
               <InfoTooltip text="Automated scoring system weights stocks across 15+ technical and fundamental signals (RSI, Vol Accumulation, MA Crosses, and PSX Announcements) to predict probability of move." />
             </h3>
-            
+
             <div className="flex bg-white/5 p-1 rounded-lg border border-white/5 ml-4">
               {(["day", "week", "month"] as const).map((tf) => (
                 <button
                   key={tf}
                   onClick={() => setPredictionTimeframe(tf)}
                   className={`px-4 py-1.5 rounded-md text-[10px] font-black uppercase tracking-widest transition-all ${
-                    predictionTimeframe === tf 
-                      ? "bg-bullish text-black shadow-lg" 
+                    predictionTimeframe === tf
+                      ? "bg-bullish text-black shadow-lg"
                       : "text-content-muted hover:text-white"
                   }`}
                 >
@@ -443,11 +367,19 @@ export default function Dashboard() {
               ))}
             </div>
           </div>
-          
+
           <div className="flex items-center space-x-2">
-            <span className="text-[10px] text-content-muted font-bold uppercase tracking-tighter">Updated:</span>
+            <span className="text-[10px] text-content-muted font-bold uppercase tracking-tighter">
+              Updated:
+            </span>
             <span className="text-[11px] font-mono text-white font-bold">
-              {predictionUpdated ? new Date(predictionUpdated).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "--:--"} PKT
+              {predictionUpdated
+                ? new Date(predictionUpdated).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })
+                : "--:--"}{" "}
+              PKT
             </span>
           </div>
         </div>
@@ -476,61 +408,92 @@ export default function Dashboard() {
               </tr>
             </thead>
             <tbody className="divide-y divide-border/10">
-              {predictions.length > 0 ? predictions.map((pred, idx) => (
-                <tr key={idx} className="hover:bg-white/[0.02] transition-colors group">
-                  <td className="py-4 px-6">
-                    <span className="text-sm font-black text-white group-hover:text-bullish transition-colors">
-                      {pred.symbol}
-                    </span>
-                  </td>
-                  <td className="py-4 px-6">
-                    <div className="flex flex-col items-center justify-center">
-                      <div className="w-16 h-1 w-full bg-white/5 rounded-full overflow-hidden mb-1">
-                        <div 
-                          className={`h-full transition-all duration-1000 ${
-                            pred.score >= 75 ? 'bg-bullish shadow-[0_0_8px_rgba(34,197,94,0.5)]' :
-                            pred.score >= 50 ? 'bg-bullish/60' : 'bg-content-muted'
-                          }`}
-                          style={{ width: `${pred.score}%` }}
-                        />
-                      </div>
-                      <span className="text-xs font-black font-mono text-white">{pred.score}</span>
-                    </div>
-                  </td>
-                  <td className="py-4 px-6 text-center">
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className={`w-2 h-2 rounded-full animate-pulse ${
-                        pred.bias?.includes('BULLISH') ? 'bg-bullish' :
-                        pred.bias?.includes('WATCH') ? 'bg-yellow-400' : 'bg-content-muted'
-                      }`} />
-                      <span className={`text-[10px] font-black tracking-widest uppercase ${
-                        pred.bias?.includes('BULLISH') ? 'text-bullish' :
-                        pred.bias?.includes('WATCH') ? 'text-yellow-400' : 'text-content-muted'
-                      }`}>
-                        {pred.bias?.replace('_', ' ')}
+              {predictions.length > 0 ? (
+                predictions.map((pred, idx) => (
+                  <tr
+                    key={idx}
+                    className="hover:bg-white/[0.02] transition-colors group"
+                  >
+                    <td className="py-4 px-6">
+                      <span className="text-sm font-black text-white group-hover:text-bullish transition-colors">
+                        {pred.symbol}
                       </span>
-                    </div>
-                  </td>
-                  <td className="py-4 px-6">
-                    <div className="flex flex-wrap gap-1.5">
-                      {pred.signals_fired?.map((sig: string, sIdx: number) => (
-                        <span key={sIdx} className="px-2 py-0.5 rounded-md bg-white/5 border border-white/5 text-[9px] font-bold text-content-secondary group-hover:text-white transition-colors">
-                          {sig}
+                    </td>
+                    <td className="py-4 px-6">
+                      <div className="flex flex-col items-center justify-center">
+                        <div className="w-16 h-1 w-full bg-white/5 rounded-full overflow-hidden mb-1">
+                          <div
+                            className={`h-full transition-all duration-1000 ${
+                              pred.score >= 75
+                                ? "bg-bullish shadow-[0_0_8px_rgba(34,197,94,0.5)]"
+                                : pred.score >= 50
+                                  ? "bg-bullish/60"
+                                  : "bg-content-muted"
+                            }`}
+                            style={{ width: `${pred.score}%` }}
+                          />
+                        </div>
+                        <span className="text-xs font-black font-mono text-white">
+                          {pred.score}
                         </span>
-                      ))}
-                    </div>
-                  </td>
-                  <td className="py-4 px-6 text-right">
-                    <span className="text-xs font-mono font-bold text-white italic">Rs. {pred.price_at_run?.toLocaleString()}</span>
-                  </td>
-                </tr>
-              )) : (
+                      </div>
+                    </td>
+                    <td className="py-4 px-6 text-center">
+                      <div className="flex items-center justify-center space-x-2">
+                        <div
+                          className={`w-2 h-2 rounded-full animate-pulse ${
+                            pred.bias?.includes("BULLISH")
+                              ? "bg-bullish"
+                              : pred.bias?.includes("WATCH")
+                                ? "bg-yellow-400"
+                                : "bg-content-muted"
+                          }`}
+                        />
+                        <span
+                          className={`text-[10px] font-black tracking-widest uppercase ${
+                            pred.bias?.includes("BULLISH")
+                              ? "text-bullish"
+                              : pred.bias?.includes("WATCH")
+                                ? "text-yellow-400"
+                                : "text-content-muted"
+                          }`}
+                        >
+                          {pred.bias?.replace("_", " ")}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <div className="flex flex-wrap gap-1.5">
+                        {pred.signals_fired?.map(
+                          (sig: string, sIdx: number) => (
+                            <span
+                              key={sIdx}
+                              className="px-2 py-0.5 rounded-md bg-white/5 border border-white/5 text-[9px] font-bold text-content-secondary group-hover:text-white transition-colors"
+                            >
+                              {sig}
+                            </span>
+                          ),
+                        )}
+                      </div>
+                    </td>
+                    <td className="py-4 px-6 text-right">
+                      <span className="text-xs font-mono font-bold text-white italic">
+                        Rs. {pred.price_at_run?.toLocaleString()}
+                      </span>
+                    </td>
+                  </tr>
+                ))
+              ) : (
                 <tr>
                   <td colSpan={5} className="py-20 text-center">
                     <div className="flex flex-col items-center space-y-3 opacity-30">
                       <Lock className="w-8 h-8 text-content-muted" />
-                      <span className="text-xs font-black tracking-widest uppercase">Syncing Cloud Intelligence...</span>
-                      <span className="text-[10px] font-bold text-content-muted italic">Scoring engine runs daily at 9:00 AM PKT</span>
+                      <span className="text-xs font-black tracking-widest uppercase">
+                        Syncing Cloud Intelligence...
+                      </span>
+                      <span className="text-[10px] font-bold text-content-muted italic">
+                        Scoring engine runs daily at 9:00 AM PKT
+                      </span>
                     </div>
                   </td>
                 </tr>
@@ -543,23 +506,42 @@ export default function Dashboard() {
         <div className="px-6 py-5 bg-white/[0.03] border-t border-border/50">
           <div className="grid grid-cols-3 gap-8">
             <div className="space-y-2">
-              <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Aggregate scoring (0-100)</h4>
+              <h4 className="text-[10px] font-black text-white uppercase tracking-widest">
+                Aggregate scoring (0-100)
+              </h4>
               <p className="text-[9px] text-content-muted leading-relaxed">
-                Our AI weights 15+ indicators. <span className="text-bullish font-bold">Technicals</span> (RSI Trend, MA Crosses, Vol Accumulation) provide 60% of the weight, while <span className="text-bullish font-bold">Catalysts</span> (PSX Announcements, Sector Rotation) provide the remaining 40%.
+                Our AI weights 15+ indicators.{" "}
+                <span className="text-bullish font-bold">Technicals</span> (RSI
+                Trend, MA Crosses, Vol Accumulation) provide 60% of the weight,
+                while <span className="text-bullish font-bold">Catalysts</span>{" "}
+                (PSX Announcements, Sector Rotation) provide the remaining 40%.
               </p>
             </div>
             <div className="space-y-2">
-              <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Bias Thresholds</h4>
+              <h4 className="text-[10px] font-black text-white uppercase tracking-widest">
+                Bias Thresholds
+              </h4>
               <div className="flex flex-wrap gap-2 pt-1">
-                <span className="text-[8px] font-black px-1.5 py-0.5 rounded bg-bullish text-black">75+ STRONG BULLISH</span>
-                <span className="text-[8px] font-black px-1.5 py-0.5 rounded bg-bullish/40 text-white">60+ BULLISH</span>
-                <span className="text-[8px] font-black px-1.5 py-0.5 rounded bg-white/10 text-white">45+ WATCH</span>
+                <span className="text-[8px] font-black px-1.5 py-0.5 rounded bg-bullish text-black">
+                  75+ STRONG BULLISH
+                </span>
+                <span className="text-[8px] font-black px-1.5 py-0.5 rounded bg-bullish/40 text-white">
+                  60+ BULLISH
+                </span>
+                <span className="text-[8px] font-black px-1.5 py-0.5 rounded bg-white/10 text-white">
+                  45+ WATCH
+                </span>
               </div>
             </div>
             <div className="space-y-2">
-              <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Price Re-anchoring</h4>
+              <h4 className="text-[10px] font-black text-white uppercase tracking-widest">
+                Price Re-anchoring
+              </h4>
               <p className="text-[9px] text-content-muted leading-relaxed">
-                <span className="text-white font-bold italic">Run Price</span> is the actual nominal price from PSX. We automatically re-anchor historical 6-month adjusted data to this nominal price to ensure MA20/MA50 and RSI calculations are mathematically precise.
+                <span className="text-white font-bold italic">Run Price</span>{" "}
+                is the actual nominal price from PSX. We automatically re-anchor
+                historical 6-month adjusted data to this nominal price to ensure
+                MA20/MA50 and RSI calculations are mathematically precise.
               </p>
             </div>
           </div>
@@ -569,14 +551,41 @@ export default function Dashboard() {
       {/* Top Level Metrics */}
       <div className="grid grid-cols-4 gap-4">
         {[
-          { label: "Market Volume", value: marketData?.volume || "---", sub: "Shares traded today", color: "text-white" },
-          { label: "USD / PKR", value: marketData?.usdPkr?.toFixed(2) || "---.--", sub: "Interbank Rate", color: "text-bearish" },
-          { label: "Gold (10g)", value: marketData?.gold?.toLocaleString() || "---,---", sub: "PKR", color: "text-bullish" },
-          { label: "6M T-Bill Yield", value: marketData?.tBillYield ? `${marketData.tBillYield}%` : "---%", sub: "Latest SBP Auction", color: "text-white" }
+          {
+            label: "Market Volume",
+            value: marketData?.volume || "---",
+            sub: "Shares traded today",
+            color: "text-white",
+          },
+          {
+            label: "USD / PKR",
+            value: marketData?.usdPkr?.toFixed(2) || "---.--",
+            sub: "Interbank Rate",
+            color: "text-bearish",
+          },
+          {
+            label: "Gold (10g)",
+            value: marketData?.gold?.toLocaleString() || "---,---",
+            sub: "PKR",
+            color: "text-bullish",
+          },
+          {
+            label: "6M T-Bill Yield",
+            value: marketData?.tBillYield
+              ? `${marketData.tBillYield}%`
+              : "---%",
+            sub: "Latest SBP Auction",
+            color: "text-white",
+          },
         ].map((m, i) => (
-          <div key={i} className="panel p-4 flex flex-col justify-between border-white/5 bg-white/5 hover:bg-white/10 transition-colors">
+          <div
+            key={i}
+            className="panel p-4 flex flex-col justify-between border-white/5 bg-white/5 hover:bg-white/10 transition-colors"
+          >
             <span className="data-label">{m.label}</span>
-            <div className={`mt-2 text-2xl font-bold font-mono tracking-tight ${m.color}`}>
+            <div
+              className={`mt-2 text-2xl font-bold font-mono tracking-tight ${m.color}`}
+            >
               {m.value}
             </div>
             <span className="text-content-secondary text-[10px] mt-1 uppercase tracking-tighter opacity-60">
@@ -597,8 +606,8 @@ export default function Dashboard() {
                 <InfoTooltip text="A comprehensive, real-time view of all trading activity on the KSE-100 index. Use the search bar to find specific ticker symbols instantly." />
               </h3>
               <div className="relative">
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   placeholder="Search Symbols..."
                   className="bg-background/80 border border-border/50 rounded-lg px-3 py-1.5 text-xs text-white placeholder:text-content-muted focus:outline-none focus:ring-1 focus:ring-bullish/50 w-48 transition-all"
                   value={searchQuery}
@@ -633,16 +642,22 @@ export default function Dashboard() {
                             {stock.symbol}
                           </span>
                           <span className="text-[9px] text-content-muted font-bold flex items-center">
-                            REGULAR <ExternalLink className="w-2 h-2 ml-1 opacity-0 group-hover:opacity-100" />
+                            REGULAR{" "}
+                            <ExternalLink className="w-2 h-2 ml-1 opacity-0 group-hover:opacity-100" />
                           </span>
                         </div>
                       </td>
                       <td className="py-4 px-6 text-right font-mono font-bold text-white text-sm">
-                        {stock.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                        {stock.price.toLocaleString(undefined, {
+                          minimumFractionDigits: 2,
+                        })}
                       </td>
                       <td className="py-4 px-6 text-right">
-                        <span className={`font-mono font-black text-sm ${stock.change >= 0 ? "text-bullish" : "text-bearish"}`}>
-                          {stock.change >= 0 ? "+" : ""}{stock.change.toFixed(2)}%
+                        <span
+                          className={`font-mono font-black text-sm ${stock.change >= 0 ? "text-bullish" : "text-bearish"}`}
+                        >
+                          {stock.change >= 0 ? "+" : ""}
+                          {stock.change.toFixed(2)}%
                         </span>
                       </td>
                       <td className="py-4 px-6 text-right font-mono text-xs text-content-secondary">
@@ -651,7 +666,14 @@ export default function Dashboard() {
                     </tr>
                   ))
                 ) : (
-                  <tr><td colSpan={4} className="text-center py-20 text-content-muted text-sm font-bold tracking-widest uppercase opacity-50 animate-pulse">Syncing Bloomberg Terminal Data...</td></tr>
+                  <tr>
+                    <td
+                      colSpan={4}
+                      className="text-center py-20 text-content-muted text-sm font-bold tracking-widest uppercase opacity-50 animate-pulse"
+                    >
+                      Syncing Bloomberg Terminal Data...
+                    </td>
+                  </tr>
                 )}
               </tbody>
             </table>
@@ -670,11 +692,20 @@ export default function Dashboard() {
             <div className="p-0">
               <table className="w-full text-xs">
                 <tbody>
-                  {gainers.slice(0, 5).map(s => (
-                    <tr key={s.symbol} className="border-b border-border/30 last:border-0 hover:bg-bullish/10 transition-colors">
-                      <td className="py-3 px-5 font-bold text-white">{s.symbol}</td>
-                      <td className="py-3 px-5 text-right font-mono text-content-secondary">{s.price.toFixed(2)}</td>
-                      <td className="py-3 px-5 text-right font-mono text-bullish font-bold">+{s.change.toFixed(2)}%</td>
+                  {gainers.slice(0, 5).map((s) => (
+                    <tr
+                      key={s.symbol}
+                      className="border-b border-border/30 last:border-0 hover:bg-bullish/10 transition-colors"
+                    >
+                      <td className="py-3 px-5 font-bold text-white">
+                        {s.symbol}
+                      </td>
+                      <td className="py-3 px-5 text-right font-mono text-content-secondary">
+                        {s.price.toFixed(2)}
+                      </td>
+                      <td className="py-3 px-5 text-right font-mono text-bullish font-bold">
+                        +{s.change.toFixed(2)}%
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -692,11 +723,20 @@ export default function Dashboard() {
             <div className="p-0">
               <table className="w-full text-xs">
                 <tbody>
-                  {losers.slice(0, 5).map(s => (
-                    <tr key={s.symbol} className="border-b border-border/30 last:border-0 hover:bg-bearish/10 transition-colors">
-                      <td className="py-3 px-5 font-bold text-white">{s.symbol}</td>
-                      <td className="py-3 px-5 text-right font-mono text-content-secondary">{s.price.toFixed(2)}</td>
-                      <td className="py-3 px-5 text-right font-mono text-bearish font-bold">{s.change.toFixed(2)}%</td>
+                  {losers.slice(0, 5).map((s) => (
+                    <tr
+                      key={s.symbol}
+                      className="border-b border-border/30 last:border-0 hover:bg-bearish/10 transition-colors"
+                    >
+                      <td className="py-3 px-5 font-bold text-white">
+                        {s.symbol}
+                      </td>
+                      <td className="py-3 px-5 text-right font-mono text-content-secondary">
+                        {s.price.toFixed(2)}
+                      </td>
+                      <td className="py-3 px-5 text-right font-mono text-bearish font-bold">
+                        {s.change.toFixed(2)}%
+                      </td>
                     </tr>
                   ))}
                 </tbody>

@@ -1,0 +1,13 @@
+﻿src/components/Dashboard/Dashboard.tsx(4,1): error TS6192: All imports in import declaration are unused.
+src/components/Dashboard/Dashboard.tsx(23,1): error TS6133: 'ForeignFlowChart' is declared but its value is never read.
+src/components/Dashboard/Dashboard.tsx(75,10): error TS6133: 'kse100Chart' is declared but its value is never read.
+src/components/Dashboard/Dashboard.tsx(76,10): error TS6133: 'kse30Chart' is declared but its value is never read.
+src/components/Dashboard/KSEChart.tsx(5,20): error TS2304: Cannot find name 'useRef'.
+src/components/Dashboard/KSEChart.tsx(6,19): error TS2304: Cannot find name 'useRef'.
+src/components/Dashboard/KSEChart.tsx(7,23): error TS2304: Cannot find name 'useState'.
+src/components/Dashboard/KSEChart.tsx(8,27): error TS2304: Cannot find name 'useState'.
+src/components/Dashboard/KSEChart.tsx(9,35): error TS2304: Cannot find name 'useState'.
+src/components/Dashboard/KSEChart.tsx(16,3): error TS2304: Cannot find name 'useEffect'.
+src/components/Dashboard/KSEChart.tsx(23,3): error TS2304: Cannot find name 'useEffect'.
+src/components/Dashboard/KSEChart.tsx(109,12): error TS2339: Property 'setMarkers' does not exist on type 'ISeriesApi<"Line", Time, WhitespaceData<Time> | LineData<Time>, LineSeriesOptions, DeepPartial<LineStyleOptions & SeriesOptionsCommon>>'.
+src/components/Dashboard/KSEChart.tsx(225,42): error TS7006: Parameter 'p' implicitly has an 'any' type.
