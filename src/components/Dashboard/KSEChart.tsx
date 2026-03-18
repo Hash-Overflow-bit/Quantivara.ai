@@ -11,6 +11,9 @@ export default function KSEChart({ symbol = "KSE100" }) {
     ma20: true, ma50: true, ma200: false,
     volume: true, flow: true, events: true
   });
+  const [intelMode, setIntelMode] = useState<string | null>(null);
+  const [intelContent, setIntelContent] = useState<string | null>(null);
+  const [loadingIntel, setLoadingIntel] = useState(false);
 
   const timeframes = ["1D", "1W", "1M", "3M", "6M", "YTD", "1Y", "3Y", "5Y"];
 
@@ -19,7 +22,27 @@ export default function KSEChart({ symbol = "KSE100" }) {
       .then(r => r.json())
       .then(setData)
       .catch(console.error);
+    
+    // Auto-fetch base intelligence when data loads
+    if (data && !intelMode) {
+        fetchIntelligence("base");
+    }
   }, [symbol, tf]);
+
+  const fetchIntelligence = (mode: string) => {
+    setIntelMode(mode);
+    setLoadingIntel(true);
+    fetch(`http://localhost:8000/api/chart/${symbol}/intelligence?mode=${mode}&timeframe=${tf}`)
+      .then(r => r.json())
+      .then(d => {
+        setIntelContent(d.content);
+        setLoadingIntel(false);
+      })
+      .catch(err => {
+        console.error(err);
+        setLoadingIntel(false);
+      });
+  };
 
   useEffect(() => {
     if (!data || !chartRef.current) return;
@@ -224,7 +247,50 @@ export default function KSEChart({ symbol = "KSE100" }) {
       )}
       <div ref={flowRef} className="flow-chart" />
 
-      <div style={{display: 'flex', gap: '16px'}}>
+      {/* Intelligence Engine Panel */}
+      <div className="intel-engine-container">
+        <div className="intel-persona">
+            <div className="persona-avatar">Z</div>
+            <div className="persona-info">
+                <h4>Zain • PSX Strategist AI</h4>
+                <span>Conversational Intelligence Layer</span>
+            </div>
+        </div>
+
+        <div className="intel-nav">
+            <button className={`intel-btn ${intelMode === 'base' ? 'active' : ''}`} onClick={() => fetchIntelligence('base')}>
+                <span>💡</span> What Does This Mean?
+            </button>
+            <button className={`intel-btn ${intelMode === 'smart_money' ? 'active' : ''}`} onClick={() => fetchIntelligence('smart_money')}>
+                <span>💰</span> Smart Money Read
+            </button>
+            <button className={`intel-btn ${intelMode === 'catalysts' ? 'active' : ''}`} onClick={() => fetchIntelligence('catalysts')}>
+                <span>⚡</span> This Week's Catalysts
+            </button>
+            <button className={`intel-btn ${intelMode === 'history' ? 'active' : ''}`} onClick={() => fetchIntelligence('history')}>
+                <span>⏳</span> Has This Happened Before?
+            </button>
+            <button className={`intel-btn ${intelMode === 'beginner' ? 'active' : ''}`} onClick={() => fetchIntelligence('beginner')}>
+                <span>🐣</span> Beginner Mode
+            </button>
+            <button className={`intel-btn ${intelMode === 'digest' ? 'active' : ''}`} onClick={() => fetchIntelligence('digest')}>
+                <span>🗞️</span> Daily Digest
+            </button>
+        </div>
+
+        <div className="intel-content">
+            {loadingIntel ? (
+                <div className="intel-loader">
+                    <div className="spinner" />
+                    <span>Zain is calculating {intelMode?.replace('_', ' ')} for {symbol}...</span>
+                </div>
+            ) : (
+                <pre>{intelContent || "Select an analysis mode to begin."}</pre>
+            )}
+        </div>
+      </div>
+
+      <div style={{display: 'flex', gap: '16px', marginTop: '24px'}}>
         <div style={{flex: 1}}>
             <div className="pane-label" style={{marginBottom: '4px'}}>Market Breadth</div>
             {/* Breadth Bar */}

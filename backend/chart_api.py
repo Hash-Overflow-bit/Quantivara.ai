@@ -7,6 +7,7 @@ import random
 from datetime import date, datetime, timedelta
 from fastapi import APIRouter, HTTPException, Query
 from shared import db, PKT
+from intelligence_engine import get_chart_intelligence
 import logging
 
 logger = logging.getLogger(__name__)
@@ -15,15 +16,15 @@ chart_router = APIRouter(prefix="/api/chart", tags=["Charts"])
 
 # Timeframe mapping to yfinance period and interval
 TIMEFRAME_MAP = {
-    "1D":  {"period": "1d",  "interval": "5m", "days": 1},
-    "1W":  {"period": "5d",  "interval": "1h", "days": 7},
-    "1M":  {"period": "1mo", "interval": "1d", "days": 30},
-    "3M":  {"period": "3mo", "interval": "1d", "days": 90},
-    "6M":  {"period": "6mo", "interval": "1d", "days": 180},
-    "YTD": {"period": "ytd", "interval": "1d", "days": 365}, # Simplified
-    "1Y":  {"period": "1y",  "interval": "1d", "days": 365},
-    "3Y":  {"period": "3y",  "interval": "1wk", "days": 1095},
-    "5Y":  {"period": "5y",  "interval": "1wk", "days": 1825},
+    "1D":  {"period": "5d",   "interval": "5m", "days": 1},
+    "1W":  {"period": "10d",  "interval": "1h", "days": 7},
+    "1M":  {"period": "1mo",  "interval": "1d", "days": 30},
+    "3M":  {"period": "3mo",  "interval": "1d", "days": 90},
+    "6M":  {"period": "6mo",  "interval": "1d", "days": 180},
+    "YTD": {"period": "ytd",  "interval": "1d", "days": 365},
+    "1Y":  {"period": "1y",   "interval": "1d", "days": 365},
+    "3Y":  {"period": "3y",   "interval": "1wk", "days": 1095},
+    "5Y":  {"period": "5y",   "interval": "1wk", "days": 1825},
 }
 
 SYMBOL_MAP = {
@@ -80,6 +81,10 @@ async def get_historical_df(symbol, timeframe):
         ticker = yf.Ticker(yf_sym)
         hist = ticker.history(period=params['period'], interval=params['interval'], auto_adjust=False)
         if not hist.empty:
+            # For 1D/1W, filter to actual range
+            if timeframe in ["1D", "1W"]:
+                cutoff = datetime.now() - timedelta(days=int(params['days']))
+                hist = hist[hist.index >= cutoff]
             return hist
         
         # Fallback YF symbols
@@ -90,40 +95,44 @@ async def get_historical_df(symbol, timeframe):
     except Exception as e:
         logger.warning(f"YFinance failed for {symbol}: {e}")
 
-    # 2. Try PSX History API (Indices only usually)
-    if symbol in ["KSE100", "KSE30"]:
-        try:
-            today = datetime.now(PKT)
-            start_date = (today - timedelta(days=params['days'])).strftime("%Y-%m-%d")
-            end_date = today.strftime("%Y-%m-%d")
-            url = f"https://dps.psx.com.pk/timeseries/history/{symbol}?from={start_date}&to={end_date}"
-            resp = requests.get(url, timeout=10)
-            json_data = resp.json()
-            raw_data = json_data.get("data", [])
+    # 2. Try PSX History API
+    psx_sym = symbol.replace(".KA", "")
+    try:
+        today = datetime.now(PKT)
+        start_date = (today - timedelta(days=max(int(params['days']), 5))).strftime("%Y-%m-%d")
+        end_date = today.strftime("%Y-%m-%d")
+        url = f"https://dps.psx.com.pk/timeseries/history/{psx_sym}?from={start_date}&to={end_date}"
+        
+        headers = {"X-Requested-With": "XMLHttpRequest", "User-Agent": "Mozilla/5.0"}
+        resp = requests.get(url, headers=headers, timeout=10)
+        json_data = resp.json()
+        raw_data = json_data.get("data", [])
+        
+        if raw_data:
+            df_rows = []
+            for p in raw_data:
+                ts = datetime.fromtimestamp(p[0])
+                close = float(p[1])
+                vol = int(p[2])
+                change = float(p[3])
+                op = close - change
+                df_rows.append({
+                    "Date": ts,
+                    "Open": op,
+                    "High": max(op, close) + abs(change)*0.1,
+                    "Low": min(op, close) - abs(change)*0.1,
+                    "Close": close,
+                    "Volume": vol
+                })
+            df = pd.DataFrame(df_rows)
+            df.set_index("Date", inplace=True)
             
-            if raw_data:
-                # Structure: [[ts, close, vol, change], ...]
-                df_rows = []
-                for p in raw_data:
-                    ts = datetime.fromtimestamp(p[0])
-                    close = float(p[1])
-                    vol = int(p[2])
-                    change = float(p[3])
-                    op = close - change
-                    # Mock OHLC from close-change
-                    df_rows.append({
-                        "Date": ts,
-                        "Open": op,
-                        "High": max(op, close) + abs(change)*0.1,
-                        "Low": min(op, close) - abs(change)*0.1,
-                        "Close": close,
-                        "Volume": vol
-                    })
-                df = pd.DataFrame(df_rows)
-                df.set_index("Date", inplace=True)
-                return df
-        except Exception as e:
-            logger.error(f"PSX API failed for {symbol}: {e}")
+            # Filter locally as PSX API often returns 5 years of data regardless of params
+            cutoff = today - timedelta(days=int(params['days']))
+            df = df[df.index >= cutoff.replace(tzinfo=None)]
+            return df
+    except Exception as e:
+        logger.error(f"PSX API failed for {symbol}: {e}")
 
     # 3. Final Fallback: Return empty
     return pd.DataFrame()
@@ -148,6 +157,10 @@ async def get_chart_data(symbol: str, timeframe: str = Query("3M")):
         if hist.empty:
             raise HTTPException(status_code=404, detail=f"No data found for {symbol} after YF and PSX checks.")
 
+        # Ensure data is sorted by time (ascending) and remove duplicates for lightweight-charts
+        hist = hist.sort_index()
+        hist = hist[~hist.index.duplicated(keep='last')]
+
         # OHLCV Formatting
         ohlcv = []
         for ts, row in hist.iterrows():
@@ -167,22 +180,57 @@ async def get_chart_data(symbol: str, timeframe: str = Query("3M")):
             ma = closes.rolling(window=window_size).mean()
             return [{"time": int(ts.timestamp()), "value": round(float(v), 2)} for ts, v in ma.items() if not pd.isna(v)]
 
-        # Stats
-        latest = hist.iloc[-1]
-        prev = hist.iloc[-2] if len(hist) > 1 else latest
-        change = float(latest["Close"]) - float(prev["Close"])
-        change_pct = (change / float(prev["Close"])) * 100 if float(prev["Close"]) != 0 else 0
+        # Process Stats with Live Data Fallback
+        latest_px = float(hist.iloc[-1]["Close"])
+        latest_op = float(hist.iloc[-1]["Open"])
+        latest_hi = float(hist.iloc[-1]["High"])
+        latest_lo = float(hist.iloc[-1]["Low"])
+        latest_vol = int(hist.iloc[-1]["Volume"])
+        prev_close = float(hist.iloc[-2]["Close"]) if len(hist) > 1 else latest_px
+
+        # Inject Live Data from Firestore
+        live_data_used = False
+        try:
+            doc = db.collection("market_data").document("latest").get()
+            if doc.exists:
+                m_data = doc.to_dict()
+                idx_key = symbol.lower()
+                live_price_data = m_data.get(idx_key)
+                
+                if isinstance(live_price_data, dict) and live_price_data.get('value'):
+                    lp = float(str(live_price_data['value']).replace(',', ''))
+                    if lp > 0:
+                        latest_px = lp
+                        live_data_used = True
+                        # If live is significantly newer or different, append a point to OHLCV 
+                        # but only if timestamp would be newer
+                        now_ts = int(datetime.now(PKT).timestamp())
+                        if now_ts > ohlcv[-1]['time'] + 300: # at least 5 mins newer
+                             ohlcv.append({
+                                "time": now_ts,
+                                "open": ohlcv[-1]['close'],
+                                "high": max(ohlcv[-1]['close'], lp),
+                                "low": min(ohlcv[-1]['close'], lp),
+                                "close": lp,
+                                "volume": 0
+                            })
+        except Exception as ex:
+            logger.warning(f"Live data injection failed for {symbol}: {ex}")
+
+        change = latest_px - prev_close
+        change_pct = (change / prev_close) * 100 if prev_close != 0 else 0
 
         stats = {
-            "current": round(float(latest["Close"]), 2),
-            "open": round(float(latest["Open"]), 2),
-            "high": round(float(latest["High"]), 2),
-            "low": round(float(latest["Low"]), 2),
-            "prev_close": round(float(prev["Close"]), 2),
+            "current": round(latest_px, 2),
+            "open": round(latest_op, 2),
+            "high": round(max(latest_hi, latest_px), 2),
+            "low": round(min(latest_lo, latest_px), 2),
+            "prev_close": round(prev_close, 2),
             "change": round(change, 2),
             "change_pct": round(change_pct, 2),
             "52w_high": round(float(hist["High"].max()), 2),
             "52w_low": round(float(hist["Low"].min()), 2),
+            "live": live_data_used
         }
 
         # Returns
@@ -210,6 +258,28 @@ async def get_chart_data(symbol: str, timeframe: str = Query("3M")):
 
     except Exception as e:
         logger.error(f"Error fetching chart data: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+
+@chart_router.get("/{symbol}/intelligence")
+async def get_chart_intel_api(symbol: str, mode: str = Query("base"), timeframe: str = Query("3M")):
+    """
+    Generate conversational AI intelligence for the current chart.
+    """
+    symbol = symbol.upper()
+    try:
+        # Get actual data first for context
+        full_data = await get_chart_data(symbol, timeframe)
+        
+        intel_content = await get_chart_intelligence(symbol, mode, timeframe, current_data=full_data)
+        
+        return {
+            "symbol": symbol,
+            "mode": mode,
+            "timeframe": timeframe,
+            "content": intel_content
+        }
+    except Exception as e:
+        logger.error(f"Intelligence API error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 # --- HELPER FUNCTIONS (KEEPING PREVIOUS DEFINITIONS) ---

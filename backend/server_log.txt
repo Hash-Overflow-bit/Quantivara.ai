@@ -1206,3 +1206,920 @@ Scraping Jang Business...
 [2026-03-17 21:35:49] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
 [2026-03-17 21:35:50] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
 [2026-03-17 21:35:51] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+Firebase initialized successfully.
+Firebase initialized successfully.
+[2026-03-18 04:41:47] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-18 04:41:47] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-18 04:42:29] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-18 04:42:29] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:42:33] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 04:42:33] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 04:42:33] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 04:42:33] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 04:42:33] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 04:42:33] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 04:42:33] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 04:42:33] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 04:42:33] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-18 04:42:33] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-18 04:42:33] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-18 04:42:33] INFO: Scheduler started
+[2026-03-18 04:42:33] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-18 04:42:33] INFO: Scheduler started
+[2026-03-18 04:42:33] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-18 04:42:33] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-18 04:42:33] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-18 04:42:33] INFO: [2026-03-18 04:42:33] Starting market data update...
+[2026-03-18 04:42:33] INFO: [2026-03-18 04:42:33] Starting market data update...
+[2026-03-18 04:42:33] INFO: ✓ Scheduler shutdown complete
+[2026-03-18 04:42:33] INFO: Scheduler has been shut down
+[OK] Macro data fetched: USD/PKR=279.01, Gold=450084.0 PKR/10g, Oil=$103.74/bbl
+[2026-03-18 04:42:37] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 04:42:40] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-18 04:42:40] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 04:42:51] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:42:52] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:42:53] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:42:56] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:42:57] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:42:58] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:01] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:03] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:06] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:07] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:08] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:11] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:13] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:14] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:16] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:17] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:18] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:25] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:29] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:30] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:32] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:34] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:38] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:39] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:40] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:42] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:44] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:46] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:47] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:48] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:49] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:52] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:55] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:58] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:43:59] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:01] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:04] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:08] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:09] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:11] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:13] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:14] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:18] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:20] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:23] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:25] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:27] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:29] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:30] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:31] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:33] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 04:44:33] INFO: [OK] Volume spikes detected: 1 high spikes
+[2026-03-18 04:44:36] INFO: [OK] Successfully synced to Firebase | 475 stocks | 1 spike alerts
+[2026-03-18 04:44:36.277741+05:00] --- STARTING PHASE 1 PIPELINE ---
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+[2026-03-18 04:45:11] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.1100448484, 'policy_rate': 17.5, 'crude_oil': 95.52999877929688}
+[2026-03-18 04:45:15.030698+05:00] --- PIPELINE COMPLETE ---
+[2026-03-18 04:45:15] INFO: --- AI PULSE START ---
+[2026-03-18 04:45:17] INFO: Using Groq (Llama-3) for AI brief generation...
+[2026-03-18 04:45:28] INFO: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-03-18 04:45:29] INFO: [OK] AI Market Brief updated.
+[2026-03-18 04:45:29] INFO: Updating ticker signals...
+[2026-03-18 04:45:30] INFO: --- AI PULSE COMPLETE ---
+[2026-03-18 04:45:30] INFO: --- INITIAL DATA SYNC COMPLETE ---
+Firebase initialized successfully.
+[2026-03-18 04:48:20] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-18 04:48:57] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-18 04:49:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:49:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:49:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:49:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:49:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:49:00] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 04:49:00] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 04:49:00] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 04:49:00] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 04:49:00] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 04:49:00] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-18 04:49:00] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-18 04:49:00] INFO: Scheduler started
+[2026-03-18 04:49:00] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-18 04:49:00] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-18 04:49:00] INFO: [2026-03-18 04:49:00] Starting market data update...
+[2026-03-18 04:49:00] INFO: ✓ Scheduler shutdown complete
+[2026-03-18 04:49:00] INFO: Scheduler has been shut down
+[2026-03-18 04:59:28] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^KSE100"}}}
+[2026-03-18 04:59:29] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 04:59:30] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE100.KA"}}}
+[2026-03-18 04:59:32] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 04:59:33] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 04:59:40] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 04:59:40] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 04:59:41] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:00:08] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:00:09] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:00:09] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:00:16] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:00:16] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:00:17] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+Firebase initialized successfully.
+[2026-03-18 05:01:24] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-18 05:01:31] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-18 05:01:34] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:01:34] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:01:34] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:01:34] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:01:34] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:01:34] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:01:34] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:01:34] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:01:34] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:01:34] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:01:34] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-18 05:01:34] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-18 05:01:34] INFO: Scheduler started
+[2026-03-18 05:01:34] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-18 05:01:34] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-18 05:01:34] INFO: [2026-03-18 05:01:34] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=450048.0 PKR/10g, Oil=$103.51/bbl
+[2026-03-18 05:01:38] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 05:01:40] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-18 05:01:40] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 05:01:51] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:01:53] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:01:54] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:01:57] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:01:58] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:00] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:02] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:05] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:08] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:09] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^KSE100"}}}
+[2026-03-18 05:02:10] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:10] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:11] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:12] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE100.KA"}}}
+[2026-03-18 05:02:13] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:14] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:14] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:17] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:19] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:63271 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:02:21] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:21] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:22] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:23] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:23] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:24] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:51235 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:02:31] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:35] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:37] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:38] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:40] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:44] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:46] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:47] ERROR: $^KSE100: possibly delisted; no price data found  (period=1d) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:47] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:47] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=1d) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:48] ERROR: $KSE.KA: possibly delisted; no price data found  (period=1d) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:49] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:51] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:53] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:54] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:49783 - "GET /api/chart/KSE100?timeframe=1D HTTP/1.1" 200 OK
+[2026-03-18 05:02:56] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:56] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:57] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:02:57] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:02:57] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:00] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:54786 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:03:03] ERROR: $^KSE100: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:04] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:05] ERROR: $KSE.KA: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:05] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:07] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:09] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:61035 - "GET /api/chart/KSE100?timeframe=1W HTTP/1.1" 200 OK
+[2026-03-18 05:03:10] ERROR: $^KSE100: possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:11] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:11] ERROR: $KSE.KA: possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:12] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:16] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:62276 - "GET /api/chart/KSE100?timeframe=1M HTTP/1.1" 200 OK
+[2026-03-18 05:03:18] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:19] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:21] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:22] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:24] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:26] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:27] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:29] ERROR: $^KSE100: possibly delisted; no price data found  (period=1d) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:29] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:30] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=1d) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:30] ERROR: $KSE.KA: possibly delisted; no price data found  (period=1d) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:31] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:33] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:59649 - "GET /api/chart/KSE100?timeframe=1D HTTP/1.1" 200 OK
+[2026-03-18 05:03:34] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:36] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:37] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:39] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:03:39] INFO: [OK] Volume spikes detected: 1 high spikes
+[2026-03-18 05:03:42] INFO: [OK] Successfully synced to Firebase | 475 stocks | 1 spike alerts
+[2026-03-18 05:03:42.517402+05:00] --- STARTING PHASE 1 PIPELINE ---
+[2026-03-18 05:03:52] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:52] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:53] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:60218 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+[2026-03-18 05:03:58] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:03:59] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:00] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:03] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+INFO:     127.0.0.1:60218 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.1100453002, 'policy_rate': 17.5, 'crude_oil': 95.18000030517578}
+[2026-03-18 05:04:06.831840+05:00] --- PIPELINE COMPLETE ---
+[2026-03-18 05:04:06] INFO: --- AI PULSE START ---
+[2026-03-18 05:04:07] INFO: Market brief for 2026-03-18 already exists.
+[2026-03-18 05:04:08] INFO: Updating ticker signals...
+[2026-03-18 05:04:08] INFO: --- AI PULSE COMPLETE ---
+[2026-03-18 05:04:08] INFO: --- INITIAL DATA SYNC COMPLETE ---
+[2026-03-18 05:04:20] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:20] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:21] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:64615 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:04:26] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:27] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:27] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:62259 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:04:32] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:33] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:33] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:55902 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:04:37] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:38] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:39] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:55902 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:04:46] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:46] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:47] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:55902 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:04:52] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:52] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:53] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:59771 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:04:58] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:58] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:04:59] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:60496 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:05:04] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:05] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:06] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:57607 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:05:10] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:11] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:11] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:60496 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:05:16] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:17] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:17] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:50494 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:05:22] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:23] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:23] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:59103 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:05:28] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:29] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:29] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:56400 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:05:34] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:34] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:35] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:59220 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:05:40] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:41] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:42] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:62084 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:05:46] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:47] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:47] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:50966 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:05:52] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:53] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:05:54] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:50966 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:06:27] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:06:28] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:06:29] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:58327 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:06:33] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:06:34] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:06:34] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:58327 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:07:08] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:07:08] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:07:09] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:54052 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:07:14] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:07:14] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:07:15] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:54052 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:07:20] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:07:20] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:07:21] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:49792 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:07:25] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+Firebase initialized successfully.
+[2026-03-18 05:07:33] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-18 05:07:38] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-18 05:07:41] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:07:41] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:07:41] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:07:41] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:07:41] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:07:41] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:07:41] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:07:41] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:07:41] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:07:41] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:07:41] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-18 05:07:41] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-18 05:07:41] INFO: Scheduler started
+[2026-03-18 05:07:41] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-18 05:07:41] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-18 05:07:41] INFO: [2026-03-18 05:07:41] Starting market data update...
+[2026-03-18 05:07:42] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[OK] Macro data fetched: USD/PKR=279.01, Gold=450084.0 PKR/10g, Oil=$103.54/bbl
+[2026-03-18 05:07:44] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 05:07:46] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-18 05:07:46] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+INFO:     127.0.0.1:56562 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:07:47] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:62321 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:07:52] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+INFO:     127.0.0.1:65183 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:07:58] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:07:59] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:00] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:01] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:49949 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:08:05] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:07] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:08] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:10] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:13] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:16] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:17] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:18] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:20] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:23] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:24] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:25] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:27] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:28] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:34] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:38] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:39] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:41] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:43] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:47] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:48] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:49] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:51] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:53] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:54] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:55] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:57] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:08:58] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:00] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:04] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:06] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:08] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:10] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:13] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:16] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:17] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:20] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:21] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:22] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:25] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:26] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:28] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:29] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:31] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:32] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:33] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:35] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:36] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:09:36] INFO: [OK] Volume spikes detected: 1 high spikes
+[2026-03-18 05:09:39] INFO: [OK] Successfully synced to Firebase | 475 stocks | 1 spike alerts
+[2026-03-18 05:09:39.748214+05:00] --- STARTING PHASE 1 PIPELINE ---
+[2026-03-18 05:09:46] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:58913 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:09:50] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:50891 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:09:54] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:58913 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:09:57] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+INFO:     127.0.0.1:58913 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:10:04] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.11005489, 'policy_rate': 17.5, 'crude_oil': 95.31999969482422}
+[2026-03-18 05:10:07.836103+05:00] --- PIPELINE COMPLETE ---
+[2026-03-18 05:10:07] INFO: --- AI PULSE START ---
+[2026-03-18 05:10:08] INFO: Market brief for 2026-03-18 already exists.
+[2026-03-18 05:10:09] INFO: Updating ticker signals...
+[2026-03-18 05:10:09] INFO: --- AI PULSE COMPLETE ---
+[2026-03-18 05:10:09] INFO: --- INITIAL DATA SYNC COMPLETE ---
+Firebase initialized successfully.
+[2026-03-18 05:10:17] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-18 05:10:22] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-18 05:10:24] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:10:24] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:10:24] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:10:24] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:10:24] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:10:24] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:10:24] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:10:24] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:10:24] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:10:24] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:10:24] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-18 05:10:24] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-18 05:10:24] INFO: Scheduler started
+[2026-03-18 05:10:24] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-18 05:10:24] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-18 05:10:24] INFO: [2026-03-18 05:10:24] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=450057.0 PKR/10g, Oil=$103.61/bbl
+[2026-03-18 05:10:27] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 05:10:29] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-18 05:10:29] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+[2026-03-18 05:10:34] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 05:10:41] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:53427 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:10:41] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:10:43] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:10:44] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:57235 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:10:48] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:10:50] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:10:51] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:10:54] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:10:56] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:10:57] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:10:59] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:00] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:02] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:04] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:05] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:07] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:08] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:09] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:13] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:15] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:17] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:18] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:20] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:23] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:24] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:25] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:27] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:29] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:31] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:32] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:33] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:35] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:36] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:39] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:41] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:41] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:11:42] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:44] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:64577 - "GET /api/chart/KSE100?timeframe=1D HTTP/1.1" 200 OK
+[2026-03-18 05:11:46] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:48] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:49] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:51] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:52] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:54] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:56] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:11:57] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:11:58] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:12:00] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:52473 - "GET /api/chart/KSE100?timeframe=1W HTTP/1.1" 200 OK
+[2026-03-18 05:12:02] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:12:04] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:12:05] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:12:06] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:12:08] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:12:08] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:12:10] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:12:10] INFO: [OK] Volume spikes detected: 1 high spikes
+INFO:     127.0.0.1:53193 - "GET /api/chart/KSE100?timeframe=1M HTTP/1.1" 200 OK
+[2026-03-18 05:12:13] INFO: [OK] Successfully synced to Firebase | 475 stocks | 1 spike alerts
+[2026-03-18 05:12:13.138988+05:00] --- STARTING PHASE 1 PIPELINE ---
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+[2026-03-18 05:12:33] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.1100417904, 'policy_rate': 17.5, 'crude_oil': 95.05000305175781}
+[2026-03-18 05:12:36.972672+05:00] --- PIPELINE COMPLETE ---
+[2026-03-18 05:12:36] INFO: --- AI PULSE START ---
+[2026-03-18 05:12:37] INFO: Market brief for 2026-03-18 already exists.
+[2026-03-18 05:12:38] INFO: Updating ticker signals...
+[2026-03-18 05:12:39] INFO: --- AI PULSE COMPLETE ---
+[2026-03-18 05:12:39] INFO: --- INITIAL DATA SYNC COMPLETE ---
+[2026-03-18 05:16:34] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:50178 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:16:37] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:49626 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:16:45] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:49626 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:16:48] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:49626 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:00] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:65099 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:03] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:65099 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:09] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:65099 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:13] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:59181 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:16] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:65099 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:20] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:65099 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:34] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:64102 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:37] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:64102 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:44] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:64102 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:47] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:54620 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:17:51] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:54620 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:01] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:65325 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:05] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:61310 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:08] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:58768 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:11] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:61310 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:14] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:61310 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:18] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:56791 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:22] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:56791 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:25] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:52067 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:28] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:52067 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:33] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:61817 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:36] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:61817 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:40] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:58550 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:43] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:58550 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:18:56] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:58089 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:19:00] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:64807 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:19:04] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:64858 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+Firebase initialized successfully.
+[2026-03-18 05:19:18] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-18 05:19:23] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-18 05:19:26] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:19:26] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:19:26] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:19:26] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:19:26] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:19:26] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:19:26] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:19:26] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:19:26] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:19:26] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:19:26] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-18 05:19:26] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-18 05:19:26] INFO: Scheduler started
+[2026-03-18 05:19:26] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-18 05:19:26] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-18 05:19:26] INFO: [2026-03-18 05:19:26] Starting market data update...
+[OK] Macro data fetched: USD/PKR=279.01, Gold=450911.1 PKR/10g, Oil=$103.44/bbl
+[2026-03-18 05:19:29] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 05:19:32] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-18 05:19:32] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 05:19:44] ERROR: $AICL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:19:45] ERROR: $AIRLINK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:19:47] ERROR: $AKBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:19:50] ERROR: $ATRL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:19:51] ERROR: $BAFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:19:52] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:19:52] ERROR: $BAHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:19:55] ERROR: $BOP.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:57561 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:19:58] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:19:58] ERROR: $CNERGY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:01] ERROR: $CPHL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:03] ERROR: $DCR.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:62247 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:20:06] ERROR: $DGKC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:08] ERROR: $EFERT.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:11] ERROR: $FABL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:12] ERROR: $FATIMA.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:14] ERROR: $FCCL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:15] ERROR: $FFC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:17] ERROR: $FFL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:22] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:20:23] ERROR: $HBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:27] ERROR: $HMB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:29] ERROR: $HUBC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:31] ERROR: $HUMNL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:34] ERROR: $ILP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:35] INFO: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:52968 - "GET /api/chart/KSE100/intelligence?mode=base&timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:20:35] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:20:38] ERROR: $JVDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:39] ERROR: $KAPCO.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:50375 - "GET /api/chart/KSE100?timeframe=YTD HTTP/1.1" 200 OK
+[2026-03-18 05:20:42] ERROR: $KEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:43] ERROR: $KOHC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:46] ERROR: $LOTCHEM.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:48] ERROR: $LUCK.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:49] ERROR: $MARI.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:51] ERROR: $MCB.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:52] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:20:52] ERROR: $MEBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:20:55] ERROR: $MLCF.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:50366 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:20:58] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:21:00] ERROR: $NBP.KA: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:54571 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:21:03] ERROR: $NML.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:05] ERROR: $OGDC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:08] ERROR: $PAEL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:11] ERROR: $PIBTL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:14] ERROR: $POL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:15] ERROR: $PPL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:17] ERROR: $PSO.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:19] ERROR: $PSX.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:20] ERROR: $PTC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:23] ERROR: $SEARL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:24] ERROR: $SNGP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:26] ERROR: $SSGC.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:28] ERROR: $SYS.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:30] ERROR: $TPLP.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:32] ERROR: $TRG.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:33] ERROR: $UBL.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:35] ERROR: $UNITY.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:37] ERROR: $YOUW.KA: possibly delisted; no price data found  (period=1d)
+[2026-03-18 05:21:37] INFO: [OK] Volume spikes detected: 1 high spikes
+[2026-03-18 05:21:41] INFO: [OK] Successfully synced to Firebase | 475 stocks | 1 spike alerts
+[2026-03-18 05:21:41.252885+05:00] --- STARTING PHASE 1 PIPELINE ---
+[2026-03-18 05:21:44] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:49163 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:21:48] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:65411 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:21:54] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:50410 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:21:58] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:53318 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+[2026-03-18 05:22:09] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[2026-03-18 05:22:12] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[OK] Macro Data stored: {'usd_pkr': 279.1100525745, 'policy_rate': 17.5, 'crude_oil': 94.95999908447266}
+[2026-03-18 05:22:16.391757+05:00] --- PIPELINE COMPLETE ---
+[2026-03-18 05:22:16] INFO: --- AI PULSE START ---
+INFO:     127.0.0.1:58547 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:22:17] INFO: Market brief for 2026-03-18 already exists.
+[2026-03-18 05:22:17] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:22:17] INFO: Updating ticker signals...
+[2026-03-18 05:22:19] INFO: --- AI PULSE COMPLETE ---
+[2026-03-18 05:22:19] INFO: --- INITIAL DATA SYNC COMPLETE ---
+INFO:     127.0.0.1:58452 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:22:23] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:58452 - "GET /api/chart/KSE100?timeframe=5Y HTTP/1.1" 200 OK
+[2026-03-18 05:22:27] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:22:31] INFO: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57856 - "GET /api/chart/KSE100/intelligence?mode=base&timeframe=5Y HTTP/1.1" 200 OK
+[2026-03-18 05:22:37] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:22:43] INFO: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:65532 - "GET /api/chart/KSE100/intelligence?mode=smart_money&timeframe=5Y HTTP/1.1" 200 OK
+[2026-03-18 05:24:18] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:24:23] INFO: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58379 - "GET /api/chart/KSE100/intelligence?mode=catalysts&timeframe=5Y HTTP/1.1" 200 OK
+[2026-03-18 05:24:25] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+[2026-03-18 05:24:30] INFO: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58379 - "GET /api/chart/KSE100/intelligence?mode=digest&timeframe=5Y HTTP/1.1" 200 OK
+[2026-03-18 05:25:32] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:62773 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:25:35] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:50128 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:25:48] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:54167 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:25:52] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:58020 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:25:56] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:54167 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:25:59] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:61909 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:02] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:59158 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:07] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:59158 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:11] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:59158 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:14] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:50735 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:18] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:50735 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:23] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:50735 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:27] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:57626 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:33] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:57626 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:37] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:57626 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:40] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:50169 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:45] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:49231 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:26:49] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:54033 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:27:38] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:62398 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:27:42] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:49396 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:27:48] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:49396 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:27:51] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:49396 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:27:55] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:51945 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:27:58] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:51945 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:28:02] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:63083 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:28:06] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:63214 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:28:09] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:62251 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:28:12] WARNING: YFinance failed for KSE100: Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+INFO:     127.0.0.1:62251 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+Firebase initialized successfully.
+[2026-03-18 05:54:58] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+Firebase initialized successfully.
+[2026-03-18 05:57:03] WARNING: Transformers/Torch not found. Sentiment scoring will be disabled.
+[2026-03-18 05:57:05] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-18 05:57:09] WARNING: XGBoost not installed - using rule-based classifier
+[2026-03-18 05:57:10] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:10] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:10] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:10] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:10] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:10] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:10] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:57:10] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:57:10] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:57:10] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:57:10] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-18 05:57:10] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-18 05:57:10] INFO: Scheduler started
+[2026-03-18 05:57:10] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-18 05:57:10] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-18 05:57:10] INFO: [2026-03-18 05:57:10] Starting market data update...
+[2026-03-18 05:57:12] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:12] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:12] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:12] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:12] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:12] INFO: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-03-18 05:57:12] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:57:12] INFO: Added job "run_scrape_pipeline" to job store "default"
+[2026-03-18 05:57:12] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:57:12] INFO: Added job "run_ai_layer" to job store "default"
+[2026-03-18 05:57:12] INFO: Added job "push_to_firebase" to job store "default"
+[2026-03-18 05:57:12] INFO: Added job "update_foreign_flow" to job store "default"
+[2026-03-18 05:57:12] INFO: Scheduler started
+[2026-03-18 05:57:12] INFO: ✓ AsyncIOScheduler initialized and started
+[2026-03-18 05:57:12] INFO: --- STARTING INITIAL DATA SYNC ---
+[2026-03-18 05:57:12] INFO: [2026-03-18 05:57:12] Starting market data update...
+[2026-03-18 05:57:12] INFO: ✓ Scheduler shutdown complete
+[2026-03-18 05:57:12] INFO: Scheduler has been shut down
+[OK] Macro data fetched: USD/PKR=279.01, Gold=450155.9 PKR/10g, Oil=$102.65/bbl
+[2026-03-18 05:57:15] INFO: [OK] Indices: KSE100=150016.16, change=0.56%
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 05:57:19] INFO: Filtered 78 KSE-100 stocks from 475 total
+[2026-03-18 05:57:19] INFO: [OK] Found 475 stocks | Top KSE-100 gainer: HGFA
+Parsing 476 rows from PSX Market Watch...
+[OK] Successfully parsed 475 stocks from Market Watch
+[2026-03-18 05:57:54] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^KSE100"}}}
+[2026-03-18 05:57:55] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:57:57] ERROR: HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KSE100.KA"}}}
+[2026-03-18 05:57:58] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:57:59] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:63175 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:58:06] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:58:07] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:58:08] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:51794 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:58:21] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:58:21] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:58:22] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:58:34] INFO: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:51794 - "GET /api/chart/KSE100/intelligence?mode=beginner&timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:59:03] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:59:04] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:59:05] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:64587 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:59:10] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:59:10] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:59:11] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:50942 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:59:16] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:59:17] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 05:59:18] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+INFO:     127.0.0.1:50942 - "GET /api/chart/KSE100?timeframe=3M HTTP/1.1" 200 OK
+[2026-03-18 05:59:30] INFO: [OK] Volume spikes detected: 52 high spikes
+[2026-03-18 05:59:33] INFO: [OK] Successfully synced to Firebase | 475 stocks | 52 spike alerts
+[2026-03-18 05:59:33.886386+05:00] --- STARTING PHASE 1 PIPELINE ---
+[OK] PSX Announcements: Synced 0 new entries.
+Scraping Dawn Business...
+[2026-03-18 05:59:59] ERROR: not a 200 response: 403 for URL https://images.dawn.com/news/1195020
+Scraping Jang Business...
+[OK] Macro Data stored: {'usd_pkr': 279.1100331268, 'policy_rate': 17.5, 'crude_oil': 94.16000366210938}
+[2026-03-18 06:00:03.647484+05:00] --- PIPELINE COMPLETE ---
+[2026-03-18 06:00:03] INFO: --- AI PULSE START ---
+[2026-03-18 06:00:05] INFO: Market brief for 2026-03-18 already exists.
+[2026-03-18 06:00:05] INFO: Updating ticker signals...
+[2026-03-18 06:00:26] INFO: --- AI PULSE COMPLETE ---
+[2026-03-18 06:00:26] INFO: --- INITIAL DATA SYNC COMPLETE ---
+[2026-03-18 06:00:49] ERROR: $^KSE100: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 06:00:50] ERROR: $KSE100.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 06:00:50] ERROR: $KSE.KA: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[2026-03-18 06:00:56] INFO: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:63074 - "GET /api/chart/KSE100/intelligence?mode=digest&timeframe=3M HTTP/1.1" 200 OK
